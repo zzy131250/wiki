@@ -1,0 +1,509 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>多线程 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="gc.html" />
+    
+    
+    <link rel="prev" href="basis.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../basis/">
+            
+                <a href="../basis/">
+            
+                    
+                    基础
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../basis/os.html">
+            
+                <a href="../basis/os.html">
+            
+                    
+                    操作系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../basis/network.html">
+            
+                <a href="../basis/network.html">
+            
+                    
+                    计算机网络
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../basis/ds-algo.html">
+            
+                <a href="../basis/ds-algo.html">
+            
+                    
+                    数据机构与算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../basis/db.html">
+            
+                <a href="../basis/db.html">
+            
+                    
+                    数据库
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Java
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="basis.html">
+            
+                <a href="basis.html">
+            
+                    
+                    基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.2" data-path="multithreading.html">
+            
+                <a href="multithreading.html">
+            
+                    
+                    多线程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="gc.html">
+            
+                <a href="gc.html">
+            
+                    
+                    GC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="collection.html">
+            
+                <a href="collection.html">
+            
+                    
+                    集合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="jvm.html">
+            
+                <a href="jvm.html">
+            
+                    
+                    JVM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="lock.html">
+            
+                <a href="lock.html">
+            
+                    
+                    锁
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../python/">
+            
+                <a href="../python/">
+            
+                    
+                    Python
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../other/">
+            
+                <a href="../other/">
+            
+                    
+                    其他
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../other/docker.html">
+            
+                <a href="../other/docker.html">
+            
+                    
+                    Docker
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >多线程</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x591A;&#x7EBF;&#x7A0B;">&#x591A;&#x7EBF;&#x7A0B;</h1>
+<h2 id="thread-vs-runnable">Thread vs Runnable</h2>
+<ul>
+<li>Thread &#x5B9E;&#x73B0;&#x4E86; Runnable &#x63A5;&#x53E3;</li>
+<li>Thread &#x53EA;&#x80FD;&#x5355;&#x7EE7;&#x627F;&#xFF0C;&#x800C; Runnable &#x63A5;&#x53E3;&#x53EF;&#x4EE5;&#x591A;&#x5B9E;&#x73B0;</li>
+<li>Runnable &#x53EA;&#x5B9A;&#x4E49;&#x4E86;&#x4F5C;&#x4E1A;&#xFF0C;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x677E;&#x8026;&#x5408;&#xFF0C;&#x66F4;&#x7B26;&#x5408;&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x7684;&#x7279;&#x70B9;</li>
+</ul>
+<h2 id="java-&#x7EBF;&#x7A0B;&#x95F4;&#x901A;&#x4FE1;&#x65B9;&#x5F0F;">Java &#x7EBF;&#x7A0B;&#x95F4;&#x901A;&#x4FE1;&#x65B9;&#x5F0F;</h2>
+<ul>
+<li>&#x5171;&#x4EAB;&#x53D8;&#x91CF;(&#x9700;&#x8981;&#x5904;&#x7406;&#x540C;&#x6B65;&#x95EE;&#x9898;)<ul>
+<li>&#x5B9E;&#x73B0; Runnable &#x63A5;&#x53E3;</li>
+<li>volatile &#x53D8;&#x91CF;</li>
+</ul>
+</li>
+<li>&#x7BA1;&#x9053;&#x6D41;<ul>
+<li>&#x5B57;&#x8282;&#x6D41;&#xFF1A;PipedInputStream &#x548C; PipedOutputStream</li>
+<li>&#x5B57;&#x7B26;&#x6D41;&#xFF1A;PipedReader &#x548C; PipedWriter</li>
+</ul>
+</li>
+<li>&#x8F6E;&#x8BE2;</li>
+<li>wait / notify &#x673A;&#x5236;&#xFF08;&#x9501;&#xFF09;<ul>
+<li>synchronized + wait() / notify()</li>
+<li>&#x663E;&#x5F0F;&#x9501; + &#x6761;&#x4EF6;&#x53D8;&#x91CF; Condition</li>
+</ul>
+</li>
+</ul>
+<h2 id="threadlocal">ThreadLocal</h2>
+<ul>
+<li>&#x4E3A;&#x6BCF;&#x4E2A;&#x7EBF;&#x7A0B;&#x90FD;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#x526F;&#x672C;, &#x6BCF;&#x4E2A;&#x7EBF;&#x7A0B;&#x90FD;&#x53EF;&#x4EE5;&#x4FEE;&#x6539;&#x81EA;&#x5DF1;&#x6240;&#x62E5;&#x6709;&#x7684;&#x53D8;&#x91CF;&#x526F;&#x672C;, &#x800C;&#x4E0D;&#x4F1A;&#x5F71;&#x54CD;&#x5176;&#x4ED6;&#x7EBF;&#x7A0B;&#x7684;&#x526F;&#x672C;</li>
+<li>&#x5728;&#x5F53;&#x524D;&#x7EBF;&#x7A0B;&#x4E2D;&#x6709;&#x4E00;&#x4E2A; ThreadLocalMap &#x5F15;&#x7528;&#xFF08;ThreadLocal &#x9759;&#x6001;&#x5185;&#x90E8;&#x7C7B;&#xFF0C;&#x6BCF;&#x4E2A;&#x7EBF;&#x7A0B;&#x4E00;&#x4E2A;&#xFF0C;&#x7C7B;&#x4F3C;&#x4E8E; WeakHashMap&#xFF0C;key &#x8DDF; entry &#x90FD;&#x662F;&#x5F31;&#x5F15;&#x7528;&#xFF09;&#xFF0C;key &#x662F; ThreadLocal &#x5BF9;&#x8C61;&#x7684;&#x5F31;&#x5F15;&#x7528;&#xFF0C;value &#x662F;&#x5B9E;&#x9645;&#x5B58;&#x50A8;&#x7684; object</li>
+<li>&#x9002;&#x7528;&#x4E8E;&#x53D8;&#x91CF;&#x5728;&#x7EBF;&#x7A0B;&#x95F4;&#x9694;&#x79BB;&#x800C;&#x5728;&#x65B9;&#x6CD5;&#x6216;&#x7C7B;&#x95F4;&#x5171;&#x4EAB;&#x7684;&#x573A;&#x666F;</li>
+<li>get &#x548C; set &#x7684;&#x65F6;&#x5019;&#x90FD;&#x4F1A;&#x5220;&#x9664; key &#x4E3A; null &#x7684; entry&#xFF0C;&#x4F46;&#x662F;&#x5982;&#x679C;&#x957F;&#x65F6;&#x95F4;&#x4E0D;&#x8C03;&#x7528;&#xFF0C;&#x6216;&#x8005;&#x7EBF;&#x7A0B;&#x4E0D;&#x9500;&#x6BC1;&#xFF0C;&#x5219;&#x4F1A;&#x51FA;&#x73B0;&#x5185;&#x5B58;&#x6CC4;&#x6F0F;</li>
+</ul>
+<h2 id="&#x4F2A;&#x5171;&#x4EAB;">&#x4F2A;&#x5171;&#x4EAB;</h2>
+<p>&#x4E0D;&#x540C;&#x5904;&#x7406;&#x5668;&#x4E0A;&#x7684;&#x7EBF;&#x7A0B;&#x5BF9;&#x53D8;&#x91CF;&#x7684;&#x4FEE;&#x6539;&#x4F9D;&#x8D56;&#x4E8E;&#x76F8;&#x540C;&#x7684;&#x7F13;&#x5B58;&#x884C;</p>
+<h2 id="thread-&#x4E2D;&#x7684;&#x65B9;&#x6CD5;">Thread &#x4E2D;&#x7684;&#x65B9;&#x6CD5;</h2>
+<h3 id="start-vs-run">start() vs run()</h3>
+<ul>
+<li>start()&#xFF1A;&#x542F;&#x52A8;&#x65B0;&#x7EBF;&#x7A0B;&#xFF0C;&#x771F;&#x6B63;&#x7684;&#x591A;&#x7EBF;&#x7A0B;&#x6267;&#x884C;</li>
+<li>run()&#xFF1A;&#x666E;&#x901A;&#x7684;&#x65B9;&#x6CD5;&#x8C03;&#x7528;&#xFF0C;&#x4E0D;&#x542F;&#x52A8;&#x65B0;&#x7EBF;&#x7A0B;</li>
+</ul>
+<h3 id="sleep-vs-wait-vs-yield">sleep() vs wait() vs yield()</h3>
+<h4 id="sleep">sleep()</h4>
+<ul>
+<li>Thread &#x7C7B;&#x7684;&#x9759;&#x6001;&#x65B9;&#x6CD5;&#xFF0C;&#x4E0D;&#x91CA;&#x653E;&#x5BF9;&#x8C61;&#x9501;</li>
+<li>&#x4F7F;&#x7EBF;&#x7A0B;&#x505C;&#x6EDE;&#xFF0C;&#x8BA9;&#x51FA;cpu</li>
+<li>&#x4F11;&#x7720;&#x671F;&#x6EE1;&#x4E0D;&#x4E00;&#x5B9A;&#x7ACB;&#x5373;&#x6267;&#x884C;</li>
+</ul>
+<h4 id="wait">wait()</h4>
+<ul>
+<li>Object &#x7C7B;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x91CA;&#x653E;&#x5BF9;&#x8C61;&#x9501;</li>
+<li>&#x8BA9;&#x51FA; cpu</li>
+<li>&#x4F7F;&#x7528; notify &#x6216;&#x6307;&#x5B9A;&#x65F6;&#x95F4;&#x5524;&#x9192;</li>
+<li>&#x5FC5;&#x987B;&#x653E;&#x5728; synchronized &#x4E2D;&#xFF0C;&#x6700;&#x597D;&#x653E;&#x5728; while &#x5FAA;&#x73AF;&#x4E2D;&#xFF0C;&#x5FAA;&#x73AF;&#x4F1A;&#x5728;&#x7B49;&#x5F85;&#x4E4B;&#x524D;&#x548C;&#x4E4B;&#x540E;&#x6D4B;&#x8BD5;&#x6761;&#x4EF6;</li>
+</ul>
+<h4 id="yield">yield()</h4>
+<ul>
+<li>Thread &#x7C7B;&#x7684;&#x9759;&#x6001;&#x65B9;&#x6CD5;&#xFF0C;&#x4E0D;&#x91CA;&#x653E;&#x5BF9;&#x8C61;&#x9501;</li>
+<li>&#x8BA9;&#x51FA; cpu</li>
+<li>&#x6682;&#x505C;&#x5F53;&#x524D;&#x7EBF;&#x7A0B;&#xFF0C;&#x8BA9;&#x76F8;&#x540C;&#x4F18;&#x5148;&#x7EA7;&#x7684;&#x7EBF;&#x7A0B;&#x6709;&#x673A;&#x4F1A;&#x6267;&#x884C;&#xFF1B;&#x5982;&#x679C;&#x53EA;&#x6709;&#x4F4E;&#x4F18;&#x5148;&#x7EA7;&#x7EBF;&#x7A0B;&#xFF0C;&#x5219;&#x7EE7;&#x7EED;&#x6267;&#x884C;</li>
+</ul>
+<h3 id="stop-vs-suspend-vs-interrupt">stop() vs suspend() vs interrupt()</h3>
+<ul>
+<li>stop()&#xFF1A;&#x7ACB;&#x5373;&#x505C;&#x6B62;&#xFF0C;&#x89E3;&#x9664;&#x7EBF;&#x7A0B;&#x7684;&#x6240;&#x6709;&#x9501;&#x5B9A;&#xFF1B;&#x4F1A;&#x4F7F;&#x5BF9;&#x8C61;&#x5904;&#x4E8E;&#x4E0D;&#x8FDE;&#x8D2F;&#x7684;&#x72B6;&#x6001;</li>
+<li>suspend()&#xFF1A;&#x505C;&#x6B62;&#x7EBF;&#x7A0B;&#x800C;&#x4E0D;&#x91CA;&#x653E;&#x9501;&#xFF0C;&#x5BB9;&#x6613;&#x4EA7;&#x751F;&#x6B7B;&#x9501;</li>
+<li>interrupt()&#xFF1A;&#x5728;&#x7EBF;&#x7A0B;&#x4E2D;&#x6253;&#x4E00;&#x4E2A;&#x4E2D;&#x65AD;&#x6807;&#x5FD7;&#xFF0C;&#x5E76;&#x5728;&#x5408;&#x9002;&#x7684;&#x65F6;&#x673A;&#x4E2D;&#x65AD;</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="basis.html" class="navigation navigation-prev " aria-label="Previous page: 基础">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="gc.html" class="navigation navigation-next " aria-label="Next page: GC">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"多线程","level":"1.3.2","depth":2,"next":{"title":"GC","level":"1.3.3","depth":2,"path":"java/gc.md","ref":"java/gc.md","articles":[]},"previous":{"title":"基础","level":"1.3.1","depth":2,"path":"java/basis.md","ref":"java/basis.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"java/multithreading.md","mtime":"2018-04-01T02:01:49.887Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-01T02:04:38.086Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
