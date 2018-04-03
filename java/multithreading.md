@@ -51,3 +51,30 @@
 - stop()：立即停止，解除线程的所有锁定；会使对象处于不连贯的状态
 - suspend()：停止线程而不释放锁，容易产生死锁
 - interrupt()：在线程中打一个中断标志，并在合适的时机中断
+
+## Thread 状态 blocked vs waiting
+- blocked：当前线程在等待一个 monitor lock，比如等待执行 synchronized 代码块或者使用 synchronized 标记的方法
+- waiting：调用下列方法之一
+ - 调用 Object 对象的 wait 方法，但没有指定超时值
+ - 调用 Thread 对象的 join 方法，但没有指定超时值
+ - 调用 LockSupport 对象的 park 方法
+
+## 线程池
+### 线程池处理流程
+![](http://osbdeld5c.bkt.clouddn.com/18-4-2/6345546.jpg)
+
+### 线程池种类
+- FixedThreadPool：使用 LinkedBlockingQueue 无界队列，corePool 和 maximumPool 都是一个固定值
+- SingleThreadExecutor：使用 LinkedBlockingQueue 无界队列，corePool 和 maximumPool 都是1
+- CachedThreadPool：使用 SynchronousQueue 队列（没有容量），corePool 为0，maximumPool 无界
+- ScheduledThreadPool：使用 DelayQueue 无界队列，内封装了优先队列，对任务按照执行时间先后排序
+
+### execute() vs submit()
+submit() 有返回值 future，execute() 无返回值
+
+### shutdown() vs shutdownNow()
+- 都是遍历线程池中的工作线程，逐个调用 interrupt 方法中断线程
+- shutdown() 将线程池状态置为 SHUTDOWN，然后中断所有没有执行任务的线程；shutdownNow() 将线程池状态置为 STOP，然后尝试停止正在执行或暂停任务的线程，并返回等待执行的任务列表
+
+### 线程数估算
+最佳线程数目 = （线程等待时间与线程CPU时间之比 + 1）* CPU数目

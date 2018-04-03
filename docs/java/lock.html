@@ -60,7 +60,7 @@
     <link rel="next" href="../python/" />
     
     
-    <link rel="prev" href="jvm.html" />
+    <link rel="prev" href="spring.html" />
     
 
     </head>
@@ -252,7 +252,20 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3.6" data-path="lock.html">
+        <li class="chapter " data-level="1.3.6" data-path="spring.html">
+            
+                <a href="spring.html">
+            
+                    
+                    Spring
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.7" data-path="lock.html">
             
                 <a href="lock.html">
             
@@ -423,11 +436,13 @@
 <h3 id="reentrantreadwritelock">ReentrantReadWriteLock</h3>
 <p>&#x4F7F;&#x7528;&#x4E00;&#x4E2A;&#x5171;&#x4EAB;&#x8BFB;&#x9501;&#x548C;&#x4E00;&#x4E2A;&#x72EC;&#x5360;&#x5199;&#x9501;&#xFF0C;&#x5E76;&#x4F7F;&#x7528;&#x7EE7;&#x627F;&#x81EA; AQS &#x7684; Sync &#xFF0C;&#x5B83;&#x7684; state &#x9AD8;16&#x4F4D;&#x8BB0;&#x5F55;&#x8BFB;&#x9501;&#x83B7;&#x53D6;&#x6B21;&#x6570;&#xFF0C;&#x4F4E;16&#x4F4D;&#x8BB0;&#x5F55;&#x5199;&#x9501;&#x83B7;&#x53D6;&#x6B21;&#x6570;</p>
 <h2 id="futuretask-&#x7279;&#x4F8B;">FutureTask &#x7279;&#x4F8B;</h2>
-<p>JDK 8 &#x4E2D;&#x4E0D;&#x4F7F;&#x7528; AQS&#xFF0C;&#x6539;&#x4E3A;&#x4F7F;&#x7528; Treiber stack&#xFF08;&#x57FA;&#x4E8E; CAS&#xFF09;&#xFF0C;&#x7528;&#x4E8E;&#x5B58;&#x50A8;&#x9700;&#x8981;&#x5F97;&#x5230;&#x7ED3;&#x679C;&#xFF08;&#x8C03;&#x7528;&#x4E86; get()&#xFF09;&#x7684;&#x7EBF;&#x7A0B;</p>
+<p>JDK 8 &#x4E2D;&#x4E0D;&#x4F7F;&#x7528; AQS&#xFF0C;&#x6539;&#x4E3A;&#x4F7F;&#x7528; Treiber stack&#xFF08;&#x57FA;&#x4E8E; CAS&#xFF09;&#xFF0C;&#x7B49;&#x5F85;&#x961F;&#x5217;&#x7528;&#x4E8E;&#x5B58;&#x50A8;&#x9700;&#x8981;&#x5F97;&#x5230;&#x7ED3;&#x679C;&#xFF08;&#x8C03;&#x7528;&#x4E86; get()&#xFF09;&#x7684;&#x7EBF;&#x7A0B;</p>
 <h2 id="cyclicbarrier">CyclicBarrier</h2>
 <p>&#x4F7F;&#x7528;&#x4E00;&#x4E2A; ReentrantLock &#x548C;&#x4E00;&#x4E2A; Condition</p>
 <h2 id="arrayblockingqueue">ArrayBlockingQueue</h2>
 <p>&#x4F7F;&#x7528;&#x4E00;&#x4E2A; ReentrantLock &#x548C;&#x4E24;&#x4E2A; Condition&#xFF08;notEmpty &#x548C; notFull&#xFF09;</p>
+<h2 id="delayqueue">DelayQueue</h2>
+<p>&#x4F7F;&#x7528;&#x4E00;&#x4E2A; ReentrantLock &#x548C;&#x4E00;&#x4E2A; PriorityQueue</p>
 <h2 id="&#x9501;&#x964D;&#x7EA7;">&#x9501;&#x964D;&#x7EA7;</h2>
 <p>&#x9075;&#x5FAA;&#x83B7;&#x53D6;&#x5199;&#x9501;&#x3001;&#x83B7;&#x53D6;&#x8BFB;&#x9501;&#x5728;&#x91CA;&#x653E;&#x5199;&#x9501;&#x7684;&#x6B21;&#x5E8F;&#xFF0C;&#x5199;&#x9501;&#x80FD;&#x591F;&#x964D;&#x7EA7;&#x6210;&#x4E3A;&#x8BFB;&#x9501;</p>
 <h2 id="&#x516C;&#x5E73;&#x6027;">&#x516C;&#x5E73;&#x6027;</h2>
@@ -462,7 +477,7 @@
 
             
                 
-                <a href="jvm.html" class="navigation navigation-prev " aria-label="Previous page: JVM">
+                <a href="spring.html" class="navigation navigation-prev " aria-label="Previous page: Spring">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
@@ -478,7 +493,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"锁","level":"1.3.6","depth":2,"next":{"title":"Python","level":"1.4","depth":1,"path":"python/README.md","ref":"python/README.md","articles":[]},"previous":{"title":"JVM","level":"1.3.5","depth":2,"path":"java/jvm.md","ref":"java/jvm.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"java/lock.md","mtime":"2018-04-01T02:01:23.043Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-02T01:49:33.251Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"锁","level":"1.3.7","depth":2,"next":{"title":"Python","level":"1.4","depth":1,"path":"python/README.md","ref":"python/README.md","articles":[]},"previous":{"title":"Spring","level":"1.3.6","depth":2,"path":"java/spring.md","ref":"java/spring.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"java/lock.md","mtime":"2018-04-02T03:09:18.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-03T01:48:38.205Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

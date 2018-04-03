@@ -17,13 +17,16 @@
 使用一个共享读锁和一个独占写锁，并使用继承自 AQS 的 Sync ，它的 state 高16位记录读锁获取次数，低16位记录写锁获取次数
 
 ## FutureTask 特例
-JDK 8 中不使用 AQS，改为使用 Treiber stack（基于 CAS），用于存储需要得到结果（调用了 get()）的线程
+JDK 8 中不使用 AQS，改为使用 Treiber stack（基于 CAS），等待队列用于存储需要得到结果（调用了 get()）的线程
 
 ## CyclicBarrier
 使用一个 ReentrantLock 和一个 Condition
 
 ## ArrayBlockingQueue
 使用一个 ReentrantLock 和两个 Condition（notEmpty 和 notFull）
+
+## DelayQueue
+使用一个 ReentrantLock 和一个 PriorityQueue
 
 ## 锁降级
 遵循获取写锁、获取读锁在释放写锁的次序，写锁能够降级成为读锁
