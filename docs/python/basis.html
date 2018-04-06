@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>大数据 · GitBook</title>
+        <title>基础 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="hadoop.html" />
+    <link rel="next" href="../bigdata/" />
     
     
-    <link rel="prev" href="../python/basis.html" />
+    <link rel="prev" href="./" />
     
 
     </head>
@@ -296,9 +296,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4" data-path="../python/">
+        <li class="chapter " data-level="1.4" data-path="./">
             
-                <a href="../python/">
+                <a href="./">
             
                     
                     Python
@@ -310,9 +310,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.4.1" data-path="../python/basis.html">
+        <li class="chapter active" data-level="1.4.1" data-path="basis.html">
             
-                <a href="../python/basis.html">
+                <a href="basis.html">
             
                     
                     基础
@@ -328,9 +328,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.5" data-path="./">
+        <li class="chapter " data-level="1.5" data-path="../bigdata/">
             
-                <a href="./">
+                <a href="../bigdata/">
             
                     
                     大数据
@@ -342,9 +342,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.5.1" data-path="hadoop.html">
+        <li class="chapter " data-level="1.5.1" data-path="../bigdata/hadoop.html">
             
-                <a href="hadoop.html">
+                <a href="../bigdata/hadoop.html">
             
                     
                     Hadoop
@@ -355,9 +355,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.2" data-path="spark.html">
+        <li class="chapter " data-level="1.5.2" data-path="../bigdata/spark.html">
             
-                <a href="spark.html">
+                <a href="../bigdata/spark.html">
             
                     
                     Spark
@@ -435,7 +435,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >大数据</a>
+        <a href=".." >基础</a>
     </h1>
 </div>
 
@@ -450,7 +450,26 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x5927;&#x6570;&#x636E;">&#x5927;&#x6570;&#x636E;</h1>
+                                <h1 id="&#x57FA;&#x7840;">&#x57FA;&#x7840;</h1>
+<h2 id="&#x751F;&#x6210;&#x5668;">&#x751F;&#x6210;&#x5668;</h2>
+<p>&#x751F;&#x6210;&#x5668;&#x662F;&#x8FED;&#x4EE3;&#x5668;&#x7684;&#x4E00;&#x79CD;&#xFF0C;&#x4EE5;&#x66F4;&#x4F18;&#x96C5;&#x7684;&#x65B9;&#x5F0F;&#x5B9E;&#x73B0;&#x7684;&#x8FED;&#x4EE3;&#x5668;&#xFF0C;&#x5176;&#x4E2D;&#x542B;&#x6709; yield &#x5173;&#x952E;&#x5B57;&#x3002;</p>
+<h2 id="staticmethod-vs-classmethod">staticmethod vs classmethod</h2>
+<h3 id="staticmethod">staticmethod</h3>
+<ul>
+<li>&#x51FD;&#x6570;&#x65E2;&#x4E0D;&#x4E0E;&#x7C7B;&#x7ED1;&#x5B9A;&#xFF0C;&#x4E5F;&#x4E0D;&#x4E0E;&#x5BF9;&#x8C61;&#x7ED1;&#x5B9A;</li>
+</ul>
+<h3 id="classmethod">classmethod</h3>
+<ul>
+<li>&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x662F; cls</li>
+<li>&#x6A21;&#x62DF; java &#x4E2D;&#x7684;&#x591A;&#x4E2A;&#x6784;&#x9020;&#x51FD;&#x6570;</li>
+<li>&#x51FD;&#x6570;&#x4E0E;&#x7C7B;&#x7ED1;&#x5B9A;</li>
+</ul>
+<h2 id="&#x4E0B;&#x5212;&#x7EBF;">&#x4E0B;&#x5212;&#x7EBF;</h2>
+<ul>
+<li>__foo__&#xFF1A;&#x4E00;&#x79CD;&#x7EA6;&#x5B9A;&#xFF0C;&#x8868;&#x793A; python &#x5185;&#x90E8;&#x51FD;&#x6570;&#xFF0C;&#x533A;&#x522B;&#x4E8E;&#x7528;&#x6237;&#x81EA;&#x5B9A;&#x4E49;&#x51FD;&#x6570;</li>
+<li>_foo&#xFF1A;&#x4E00;&#x79CD;&#x7EA6;&#x5B9A;&#xFF0C;&#x6307;&#x5B9A;&#x53D8;&#x91CF;&#x4E3A;&#x4FDD;&#x62A4;&#x6210;&#x5458;&#xFF0C;&#x4E0D;&#x80FD;&#x7528; from module import * &#x5BFC;&#x5165;&#xFF0C;&#x5176;&#x4ED6;&#x548C;&#x516C;&#x6709;&#x6210;&#x5458;&#x4E00;&#x6837;</li>
+<li>__foo&#xFF1A;&#x79C1;&#x6709;&#x6210;&#x5458;&#xFF0C;&#x89E3;&#x6790;&#x5668;&#x7528; _classname__foo &#x6765;&#x4EE3;&#x66FF;&#x8FD9;&#x4E2A;&#x540D;&#x5B57;&#xFF0C;&#x4EE5;&#x533A;&#x522B;&#x548C;&#x5176;&#x4ED6;&#x7C7B;&#x76F8;&#x540C;&#x7684;&#x547D;&#x540D;&#xFF0C;&#x5B83;&#x65E0;&#x6CD5;&#x76F4;&#x63A5;&#x50CF;&#x516C;&#x6709;&#x6210;&#x5458;&#x4E00;&#x6837;&#x968F;&#x4FBF;&#x8BBF;&#x95EE;&#xFF0C;&#x5FC5;&#x987B;&#x901A;&#x8FC7; &#x5BF9;&#x8C61;&#x540D;._&#x7C7B;&#x540D;__xxx &#x7684;&#x65B9;&#x5F0F;&#x8BBF;&#x95EE;</li>
+</ul>
 
                                 
                                 </section>
@@ -478,12 +497,12 @@
 
             
                 
-                <a href="../python/basis.html" class="navigation navigation-prev " aria-label="Previous page: 基础">
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: Python">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="hadoop.html" class="navigation navigation-next " aria-label="Next page: Hadoop">
+                <a href="../bigdata/" class="navigation navigation-next " aria-label="Next page: 大数据">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -494,7 +513,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"大数据","level":"1.5","depth":1,"next":{"title":"Hadoop","level":"1.5.1","depth":2,"path":"bigdata/hadoop.md","ref":"bigdata/hadoop.md","articles":[]},"previous":{"title":"基础","level":"1.4.1","depth":2,"path":"python/basis.md","ref":"python/basis.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"bigdata/README.md","mtime":"2018-04-02T01:47:12.837Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-06T01:59:23.390Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"基础","level":"1.4.1","depth":2,"next":{"title":"大数据","level":"1.5","depth":1,"path":"bigdata/README.md","ref":"bigdata/README.md","articles":[{"title":"Hadoop","level":"1.5.1","depth":2,"path":"bigdata/hadoop.md","ref":"bigdata/hadoop.md","articles":[]},{"title":"Spark","level":"1.5.2","depth":2,"path":"bigdata/spark.md","ref":"bigdata/spark.md","articles":[]}]},"previous":{"title":"Python","level":"1.4","depth":1,"path":"python/README.md","ref":"python/README.md","articles":[{"title":"基础","level":"1.4.1","depth":2,"path":"python/basis.md","ref":"python/basis.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"python/basis.md","mtime":"2018-04-06T01:58:10.336Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-06T01:59:23.390Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

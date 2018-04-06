@@ -142,7 +142,20 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.3" data-path="ds-algo.html">
+        <li class="chapter " data-level="1.2.3" data-path="design-pattern.html">
+            
+                <a href="design-pattern.html">
+            
+                    
+                    设计模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="ds-algo.html">
             
                 <a href="ds-algo.html">
             
@@ -155,7 +168,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.4" data-path="db.html">
+        <li class="chapter " data-level="1.2.5" data-path="db.html">
             
                 <a href="db.html">
             
@@ -294,6 +307,25 @@
             
 
             
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../python/basis.html">
+            
+                <a href="../python/basis.html">
+            
+                    
+                    基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
         </li>
     
         <li class="chapter " data-level="1.5" data-path="../bigdata/">
@@ -429,6 +461,16 @@
 <li>&#x5B64;&#x513F;&#x8FDB;&#x7A0B;&#xFF1A;&#x5728;&#x7236;&#x8FDB;&#x7A0B;&#x6267;&#x884C;&#x5B8C;&#x6210;&#x6216;&#x88AB;&#x7EC8;&#x6B62;&#x540E;&#x4ECD;&#x7EE7;&#x7EED;&#x8FD0;&#x884C;&#x7684;&#x4E00;&#x7C7B;&#x8FDB;&#x7A0B;&#x3002;&#x5B64;&#x513F;&#x8FDB;&#x7A0B;&#x4F1A;&#x88AB; init &#x8FDB;&#x7A0B;(&#x8FDB;&#x7A0B;&#x53F7;&#x4E3A;1)&#x6240;&#x6536;&#x517B;&#xFF0C;&#x5E76;&#x7531; init &#x8FDB;&#x7A0B;&#x5BF9;&#x5B83;&#x4EEC;&#x5B8C;&#x6210;&#x72B6;&#x6001;&#x6536;&#x96C6;&#x5DE5;&#x4F5C;</li>
 <li>&#x50F5;&#x5C38;&#x8FDB;&#x7A0B;&#xFF1A;&#x4E00;&#x4E2A;&#x8FDB;&#x7A0B;&#x4F7F;&#x7528; fork &#x521B;&#x5EFA;&#x5B50;&#x8FDB;&#x7A0B;&#xFF0C;&#x5982;&#x679C;&#x5B50;&#x8FDB;&#x7A0B;&#x9000;&#x51FA;&#xFF0C;&#x800C;&#x7236;&#x8FDB;&#x7A0B;&#x5E76;&#x6CA1;&#x6709;&#x8C03;&#x7528; wait &#x6216; waitpid &#x83B7;&#x53D6;&#x5B50;&#x8FDB;&#x7A0B;&#x7684;&#x72B6;&#x6001;&#x4FE1;&#x606F;&#xFF0C;&#x90A3;&#x4E48;&#x5B50;&#x8FDB;&#x7A0B;&#x7684;&#x8FDB;&#x7A0B;&#x63CF;&#x8FF0;&#x7B26;&#x4ECD;&#x7136;&#x4FDD;&#x5B58;&#x5728;&#x7CFB;&#x7EDF;&#x4E2D;</li>
 </ul>
+<h2 id="fork-vs-vfork">fork() vs vfork()</h2>
+<h3 id="&#x76F8;&#x540C;&#x70B9;">&#x76F8;&#x540C;&#x70B9;</h3>
+<ul>
+<li>&#x521B;&#x5EFA;&#x5B50;&#x8FDB;&#x7A0B;&#xFF0C;&#x4E00;&#x6B21;&#x8C03;&#x7528;2&#x6B21;&#x8FD4;&#x56DE;&#xFF08;&#x7236;&#x5B50;&#x8FDB;&#x7A0B;&#x5404;&#x81EA;&#x6267;&#x884C;&#x7684;&#x8FD4;&#x56DE;&#xFF09;&#xFF0C;&#x7236;&#x8FDB;&#x7A0B;&#x4E2D;&#x8FD4;&#x56DE;&#x5B50;&#x8FDB;&#x7A0B; pid&#xFF0C;&#x5B50;&#x8FDB;&#x7A0B;&#x4E2D;&#x8FD4;&#x56DE;0</li>
+</ul>
+<h3 id="&#x4E0D;&#x540C;&#x70B9;">&#x4E0D;&#x540C;&#x70B9;</h3>
+<ul>
+<li>fork()&#xFF1A;&#x5B50;&#x8FDB;&#x7A0B;&#x4EE3;&#x7801;&#x6BB5;&#x3001;&#x6570;&#x636E;&#x6BB5;&#x3001;&#x5806;&#x6808;&#x6BB5;&#x7684;&#x865A;&#x62DF;&#x5730;&#x5740;&#x90FD;&#x6307;&#x5411;&#x7236;&#x8FDB;&#x7A0B;&#x7269;&#x7406;&#x5730;&#x5740;&#x7A7A;&#x95F4;&#xFF0C;&#x5E76;&#x4F7F;&#x7528;&#x5199;&#x65F6;&#x590D;&#x5236;&#x6280;&#x672F;</li>
+<li>vfork()&#xFF1A;&#x5B50;&#x8FDB;&#x7A0B;&#x5728;&#x8C03;&#x7528; exec &#x6216; exit &#x4E4B;&#x524D;&#xFF0C;&#x5728;&#x7236;&#x8FDB;&#x7A0B;&#x7A7A;&#x95F4;&#x6267;&#x884C;&#xFF0C;&#x7236;&#x8FDB;&#x7A0B;&#x6302;&#x8D77;</li>
+</ul>
 <h2 id="&#x8FDB;&#x7A0B;&#x95F4;&#x901A;&#x4FE1;&#x65B9;&#x5F0F;">&#x8FDB;&#x7A0B;&#x95F4;&#x901A;&#x4FE1;&#x65B9;&#x5F0F;</h2>
 <ul>
 <li>&#x7BA1;&#x9053;&#xFF08;Pipe&#xFF09;&#x53CA;&#x6709;&#x540D;&#x7BA1;&#x9053;&#xFF08;Named Pipe&#xFF09;<ul>
@@ -489,7 +531,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"操作系统","level":"1.2.1","depth":2,"next":{"title":"计算机网络","level":"1.2.2","depth":2,"path":"basis/network.md","ref":"basis/network.md","articles":[]},"previous":{"title":"基础","level":"1.2","depth":1,"path":"basis/README.md","ref":"basis/README.md","articles":[{"title":"操作系统","level":"1.2.1","depth":2,"path":"basis/os.md","ref":"basis/os.md","articles":[]},{"title":"计算机网络","level":"1.2.2","depth":2,"path":"basis/network.md","ref":"basis/network.md","articles":[]},{"title":"数据机构与算法","level":"1.2.3","depth":2,"path":"basis/ds-algo.md","ref":"basis/ds-algo.md","articles":[]},{"title":"数据库","level":"1.2.4","depth":2,"path":"basis/db.md","ref":"basis/db.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"basis/os.md","mtime":"2018-04-04T02:52:34.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-04T03:34:41.192Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"操作系统","level":"1.2.1","depth":2,"next":{"title":"计算机网络","level":"1.2.2","depth":2,"path":"basis/network.md","ref":"basis/network.md","articles":[]},"previous":{"title":"基础","level":"1.2","depth":1,"path":"basis/README.md","ref":"basis/README.md","articles":[{"title":"操作系统","level":"1.2.1","depth":2,"path":"basis/os.md","ref":"basis/os.md","articles":[]},{"title":"计算机网络","level":"1.2.2","depth":2,"path":"basis/network.md","ref":"basis/network.md","articles":[]},{"title":"设计模式","level":"1.2.3","depth":2,"path":"basis/design-pattern.md","ref":"basis/design-pattern.md","articles":[]},{"title":"数据机构与算法","level":"1.2.4","depth":2,"path":"basis/ds-algo.md","ref":"basis/ds-algo.md","articles":[]},{"title":"数据库","level":"1.2.5","depth":2,"path":"basis/db.md","ref":"basis/db.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"basis/os.md","mtime":"2018-04-04T11:35:07.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-06T01:59:23.390Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

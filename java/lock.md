@@ -1,7 +1,7 @@
 # 锁
 ## AQS 及其子类
 ### AQS (AbstractQueuedSynchronizer)
-内部维护一个 volatile state 变量，以及一个等待的 Node 队列，每个 Node 节点会标志是独占还是共享的。AQS 提供了 ConditionObject 条件队列，方便 Condition 的使用。
+内部维护一个 volatile state 变量，以及一个 Node 同步队列，每个 Node 节点会标志是独占还是共享的。AQS 提供了 ConditionObject 等待队列，方便 Condition 的使用。
 
 - 独占模式：只唤醒等待队列头节点
 - 共享模式：按顺序唤醒等待队列的共享节点
