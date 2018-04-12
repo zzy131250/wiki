@@ -56,3 +56,13 @@ Java 中都是传值，即使是对象也只是传对象地址值的副本。
 - 没有访问修饰符，没有构造方法
 - 匿名内部类是局部内部类
 - 使用匿名内部类时，必须继承一个类或者实现一个接口，但是两者不可兼得
+
+## 异常
+### 异常层次结构图
+![](http://osbdeld5c.bkt.clouddn.com/18-4-10/10158020.jpg)
+
+### try - catch - finally
+- finally 在 try / catch 中的 return 语句执行完，返回结果之前执行
+- 若 finally 中有 return，则在 finally 中 return
+- finally 块中对 return 结果的更改不能影响到 try / catch 块中的结果
+- try 和 catch 块中都出现异常，若 finally 有 return，直接返回，不检查异常；若 finally 无 return，抛出异常
