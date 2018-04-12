@@ -54,4 +54,4 @@
 1. 写入 WAL 持久化，存在磁盘上，顺序增加行
 2. 写入 WAL 完成后即可查询，同时从 WAL 写入 MemStore
 3. 达到指定大小时，把 MemStore 中的数据按序写到 HFile 中（一个 MemStore 可能对应多个 HFile），并记录最后一个写入的序列号
-4. HFile Compaction：分为 Minor Compaction（多个小的 HFile 合并成几个大的 HFile）和 Major Compaction（多个小的 HFile 合并成一个大的 HFile，同时清理无意义的数据：被删除的数据、过期数据）
+4. HFile Compaction：分为 Minor Compaction（一个 MemStore 下多个小的 HFile 合并成几个大的 HFile）和 Major Compaction（一个 MemStore 下多个小的 HFile 合并成一个大的 HFile，同时清理无意义的数据：被删除的数据、过期数据）
