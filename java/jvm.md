@@ -18,6 +18,12 @@
 | -XX:+PrintHeapAtGC | 打印GC前后的详细堆栈信息 | |
 | -XX:+UseCompressedOops | 指针压缩 | |
 
+## JVM 启动流程
+- 配置 JVM 装载环境
+- 解析虚拟机参数
+- 设置线程栈大小
+- 执行 main 方法
+
 ## JVM 性能监控工具
 - jps：（JVM Process Status Tool，虚拟机进程监控工具），列出正在运行的虚拟机进程，并显示虚拟机执行主类名称，以及这些进程的本地虚拟机唯一ID
 - jinfo：（Configuration Info for Java，配置信息工具），实时地查看和调整虚拟机各项参数

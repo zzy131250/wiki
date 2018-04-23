@@ -18,12 +18,11 @@
 
 ## ThreadLocal
 - 为每个线程都创建一个变量副本, 每个线程都可以修改自己所拥有的变量副本, 而不会影响其他线程的副本
-- 在当前线程中有一个 ThreadLocalMap 引用（ThreadLocal 静态内部类，每个线程一个，类似于 WeakHashMap，key 跟 entry 都是弱引用），key 是 ThreadLocal 对象的弱引用，value 是实际存储的 object
+- 每个线程中有一个 ThreadLocalMap 引用（ThreadLocal 静态内部类，每个线程一个，类似于 WeakHashMap，key 跟 entry 都是弱引用），key 是线程共享的 ThreadLocal 对象实例的弱引用，value 是实际存储的 object
 - 适用于变量在线程间隔离而在方法或类间共享的场景
 - get 和 set 的时候都会删除 key 为 null 的 entry，但是如果长时间不调用，或者线程不销毁，则会出现内存泄漏
 
-## 伪共享
-不同处理器上的线程对变量的修改依赖于相同的缓存行
+![](http://osbdeld5c.bkt.clouddn.com/18-4-16/25253514.jpg)
 
 ## 死锁 vs 活锁 vs 饥饿
 ### 死锁
