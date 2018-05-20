@@ -24,4 +24,3 @@
     * [Spark](bigdata/spark.md)
 * [其他](other/README.md)
     * [Docker](other/docker.md)
-    * [Test](other/test.md)
