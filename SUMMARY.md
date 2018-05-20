@@ -12,6 +12,7 @@
     * [多线程](java/multithreading.md)
     * [GC](java/gc.md)
     * [集合](java/collection.md)
+    * [Java面试资源](java/interview.md)
     * [JVM](java/jvm.md)
     * [Spring](java/spring.md)
     * [锁](java/lock.md)
@@ -23,4 +24,3 @@
     * [Spark](bigdata/spark.md)
 * [其他](other/README.md)
     * [Docker](other/docker.md)
-

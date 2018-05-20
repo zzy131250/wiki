@@ -1,16 +1,16 @@
 # GC
 ## Full GC 触发条件
-1. System.gc()方法的调用
-System.gc()相当于调用Runtime.getRuntime().gc()，只是建议Java虚拟机对此部分内存进行回收，但是不一定会发生GC
+1. System.gc() 方法的调用
+System.gc() 相当于调用 Runtime.getRuntime().gc()，只是建议 Java 虚拟机对此部分内存进行回收，但是不一定会发生 GC
 2. 老年代空间不足
 3. 永生代空间不足
-4. CMS GC时出现promotion failed和concurrent mode failure
-5. 统计得到的Minor GC晋升到老生代的平均大小大于老年代的剩余空间
+4. CMS GC 时出现 promotion failed 和 concurrent mode failure
+5. 统计得到的 Minor GC 晋升到老生代的平均大小大于老年代的剩余空间
 6. 堆中分配很大的对象
 
 ## 垃圾回收的最佳实践
-- 手动调用System.gc()进行垃圾回收
-- 建议不要用finalize()方法写任何代码
+- 手动调用 System.gc() 进行垃圾回收
+- 建议不要用 finalize() 方法写任何代码
 
 ## 吞吐量 vs 响应时间
 - 停顿时间越短就越适合需要与用户交互的程序，良好的响应速度能提升用户体验
@@ -28,5 +28,9 @@ System.gc()相当于调用Runtime.getRuntime().gc()，只是建议Java虚拟机�
 ![](http://osbdeld5c.bkt.clouddn.com/18-3-29/31956834.jpg)
 
 ## G1 垃圾收集器特点
-- 各代存储空间不连续：每一代都使用不连续的大小相同的 Region，每个 Region 占有一块连续的虚拟内存地址
+- 各代存储空间不连续：每一代都使用不连续的大小相同的 Region，每个 Region 占有一块连续的虚拟内存地址；增加了巨型对象的 Region，标记为 H，存储大于等于 Region 一半的对象，存储在连续的一个或几个 Region 中
+![](http://osbdeld5c.bkt.clouddn.com/18-5-4/66014181.jpg)
+- STAB：在 GC 开始时为存活对象保存一个快照，使得在标记阶段对象漏标（由于标记线程与引用程序并发执行，在标记时，应用程序可能删除引用，会造成存活对象漏标）时使用旧引用值，不至于误删存活对象；但是可能该对象就是要被删除的，会造成浮动垃圾
+- RSet：在 Region 中划分 Card，RSet 记录了其他 Region 指向该 Region 对象的引用；使用 RSet 可以避免对整个 Region 进行扫描，提高 GC 效率
+![](http://osbdeld5c.bkt.clouddn.com/18-5-4/31704365.jpg)
 - 停顿预测模型：用户可以设定整个 GC 过程的期望停顿时间，G1 根据这个模型统计计算出来的历史数据来预测本次收集需要选择的 Region 数量，从而尽量满足用户设定的目标停顿时间
