@@ -22,5 +22,6 @@
     * [Hadoop](bigdata/hadoop.md)
     * [HBase](bigdata/hbase.md)
     * [Spark](bigdata/spark.md)
+    * [Zookeeper](bigdata/zookeeper.md)
 * [其他](other/README.md)
     * [Docker](other/docker.md)

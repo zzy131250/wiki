@@ -394,6 +394,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.5.4" data-path="../bigdata/zookeeper.html">
+            
+                <a href="../bigdata/zookeeper.html">
+            
+                    
+                    Zookeeper
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -495,6 +508,12 @@
 <li>&#x4E00;&#x81F4;&#x6027;&#xFF1A;&#x4E8B;&#x52A1;&#x7684;&#x6210;&#x529F;&#x5B8C;&#x6210;&#x5C06;&#x6570;&#x636E;&#x5E93;&#x4ECE;&#x4E00;&#x4E2A;&#x4E00;&#x81F4;&#x72B6;&#x6001;&#x8F6C;&#x53D8;&#x5230;&#x53E6;&#x4E00;&#x4E2A;&#x4E00;&#x81F4;&#x72B6;&#x6001;</li>
 <li>&#x9694;&#x79BB;&#x6027;&#xFF1A;&#x5373;&#x4F7F;&#x591A;&#x4E2A;&#x4E8B;&#x52A1;&#x5E76;&#x53D1;&#x6267;&#x884C;&#xFF0C;&#x770B;&#x4E0A;&#x53BB;&#x8981;&#x50CF;&#x6BCF;&#x4E2A;&#x6210;&#x529F;&#x4E8B;&#x52A1;&#x6309;&#x4E32;&#x884C;&#x8C03;&#x5EA6;&#x6267;&#x884C;&#x4E00;&#x6837;</li>
 <li>&#x6301;&#x4E45;&#x6027;&#xFF1A;&#x4E00;&#x65E6;&#x4E8B;&#x52A1;&#x63D0;&#x4EA4;&#xFF0C;&#x90A3;&#x4E48;&#x5B83;&#x5BF9;&#x6570;&#x636E;&#x6240;&#x4F5C;&#x7684;&#x4FEE;&#x6539;&#x5C06;&#x662F;&#x6301;&#x4E45;&#x7684;&#xFF0C;&#x65E0;&#x8BBA;&#x53D1;&#x751F;&#x4F55;&#x79CD;&#x673A;&#x5668;&#x548C;&#x7CFB;&#x7EDF;&#x6545;&#x969C;</li>
+</ul>
+<h2 id="drop-vs-delete-vs-truncate">drop vs delete vs truncate</h2>
+<ul>
+<li>delete &#x548C; truncate &#x53EA;&#x5220;&#x9664;&#x8868;&#x7684;&#x6570;&#x636E;&#x4E0D;&#x5220;&#x9664;&#x8868;&#x7684;&#x7ED3;&#x6784;</li>
+<li>&#x901F;&#x5EA6;&#x4E00;&#x822C;&#x6765;&#x8BF4;: drop &gt; truncate &gt; delete</li>
+<li>delete &#x8BED;&#x53E5;&#x662F; dml&#xFF0C;&#x8FD9;&#x4E2A;&#x64CD;&#x4F5C;&#x4F1A;&#x653E;&#x5230; rollback segment &#x4E2D;&#xFF0C;&#x4E8B;&#x52A1;&#x63D0;&#x4EA4;&#x4E4B;&#x540E;&#x624D;&#x751F;&#x6548;&#xFF1B;truncate&#x3001;drop &#x662F; ddl&#xFF0C;&#x64CD;&#x4F5C;&#x7ACB;&#x5373;&#x751F;&#x6548;&#xFF0C;&#x4E0D;&#x80FD;&#x56DE;&#x6EDA;</li>
 </ul>
 <h2 id="&#x6570;&#x636E;&#x5E93;&#x4E8B;&#x52A1;&#x9694;&#x79BB;&#x7EA7;&#x522B;&#x539F;&#x7406;">&#x6570;&#x636E;&#x5E93;&#x4E8B;&#x52A1;&#x9694;&#x79BB;&#x7EA7;&#x522B;&#x539F;&#x7406;</h2>
 <p><img src="http://osbdeld5c.bkt.clouddn.com/18-3-31/1597284.jpg" alt=""></p>
@@ -651,7 +670,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"数据库","level":"1.2.5","depth":2,"next":{"title":"Java","level":"1.3","depth":1,"path":"java/README.md","ref":"java/README.md","articles":[{"title":"基础","level":"1.3.1","depth":2,"path":"java/basis.md","ref":"java/basis.md","articles":[]},{"title":"多线程","level":"1.3.2","depth":2,"path":"java/multithreading.md","ref":"java/multithreading.md","articles":[]},{"title":"GC","level":"1.3.3","depth":2,"path":"java/gc.md","ref":"java/gc.md","articles":[]},{"title":"集合","level":"1.3.4","depth":2,"path":"java/collection.md","ref":"java/collection.md","articles":[]},{"title":"Java面试资源","level":"1.3.5","depth":2,"path":"java/interview.md","ref":"java/interview.md","articles":[]},{"title":"JVM","level":"1.3.6","depth":2,"path":"java/jvm.md","ref":"java/jvm.md","articles":[]},{"title":"Spring","level":"1.3.7","depth":2,"path":"java/spring.md","ref":"java/spring.md","articles":[]},{"title":"锁","level":"1.3.8","depth":2,"path":"java/lock.md","ref":"java/lock.md","articles":[]}]},"previous":{"title":"数据结构与算法","level":"1.2.4","depth":2,"path":"basis/ds-algo.md","ref":"basis/ds-algo.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"basis/db.md","mtime":"2018-04-19T02:30:36.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-20T03:00:04.720Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"数据库","level":"1.2.5","depth":2,"next":{"title":"Java","level":"1.3","depth":1,"path":"java/README.md","ref":"java/README.md","articles":[{"title":"基础","level":"1.3.1","depth":2,"path":"java/basis.md","ref":"java/basis.md","articles":[]},{"title":"多线程","level":"1.3.2","depth":2,"path":"java/multithreading.md","ref":"java/multithreading.md","articles":[]},{"title":"GC","level":"1.3.3","depth":2,"path":"java/gc.md","ref":"java/gc.md","articles":[]},{"title":"集合","level":"1.3.4","depth":2,"path":"java/collection.md","ref":"java/collection.md","articles":[]},{"title":"Java面试资源","level":"1.3.5","depth":2,"path":"java/interview.md","ref":"java/interview.md","articles":[]},{"title":"JVM","level":"1.3.6","depth":2,"path":"java/jvm.md","ref":"java/jvm.md","articles":[]},{"title":"Spring","level":"1.3.7","depth":2,"path":"java/spring.md","ref":"java/spring.md","articles":[]},{"title":"锁","level":"1.3.8","depth":2,"path":"java/lock.md","ref":"java/lock.md","articles":[]}]},"previous":{"title":"数据结构与算法","level":"1.2.4","depth":2,"path":"basis/ds-algo.md","ref":"basis/ds-algo.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"basis/db.md","mtime":"2018-05-20T03:19:20.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-22T02:25:54.178Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

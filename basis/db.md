@@ -16,6 +16,11 @@
 - 隔离性：即使多个事务并发执行，看上去要像每个成功事务按串行调度执行一样
 - 持久性：一旦事务提交，那么它对数据所作的修改将是持久的，无论发生何种机器和系统故障
 
+## drop vs delete vs truncate
+- delete 和 truncate 只删除表的数据不删除表的结构
+- 速度一般来说: drop > truncate > delete
+- delete 语句是 dml，这个操作会放到 rollback segment 中，事务提交之后才生效；truncate、drop 是 ddl，操作立即生效，不能回滚
+
 ## 数据库事务隔离级别原理
 ![](http://osbdeld5c.bkt.clouddn.com/18-3-31/1597284.jpg)
 
