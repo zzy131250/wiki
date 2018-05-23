@@ -490,6 +490,27 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="zookeeper">Zookeeper</h1>
+<h2 id="zab-&#x534F;&#x8BAE;&#xFF08;zookeeper-&#x539F;&#x5B50;&#x5E7F;&#x64AD;&#x534F;&#x8BAE;&#xFF09;">Zab &#x534F;&#x8BAE;&#xFF08;Zookeeper &#x539F;&#x5B50;&#x5E7F;&#x64AD;&#x534F;&#x8BAE;&#xFF09;</h2>
+<h3 id="fast-leader-&#x9009;&#x4E3E;">Fast Leader &#x9009;&#x4E3E;</h3>
+<ul>
+<li>&#x6BCF;&#x4E00;&#x8F6E;&#x9009;&#x4E3E;&#x90FD;&#x6709; epoch&#xFF0C;&#x503C;&#x8D8A;&#x5927;&#x8868;&#x793A;&#x8D8A;&#x65B0;</li>
+<li>&#x6BCF;&#x6761;&#x6570;&#x636E;&#x683C;&#x5F0F;&#x4E3A;(myid, zxid)&#xFF0C;&#x5148;&#x6BD4;&#x8F83; zxid&#xFF0C;&#x82E5;&#x76F8;&#x540C;&#x518D;&#x6BD4;&#x8F83; myid&#xFF0C;&#x8F83;&#x5927;&#x8005;&#x80DC;&#x51FA;<ul>
+<li>zxid &#x4E3A;64&#x4F4D;&#x6570;&#x5B57;&#xFF0C;&#x4F4E;32&#x4F4D;&#x8868;&#x793A;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x4E8B;&#x52A1;&#x7F16;&#x53F7;&#xFF0C;&#x9AD8;32&#x4F4D;&#x8868;&#x793A; epoch</li>
+</ul>
+</li>
+<li>&#x5982;&#x679C;&#x67D0;&#x8282;&#x70B9;&#x5F97;&#x5230;&#x4E86;&#x8D85;&#x8FC7;&#x534A;&#x6570;&#x7684;&#x6295;&#x7968;&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x5F53;&#x9009;&#x4E3A; leader</li>
+</ul>
+<h3 id="&#x6062;&#x590D;&#x9636;&#x6BB5;">&#x6062;&#x590D;&#x9636;&#x6BB5;</h3>
+<ul>
+<li>follower &#x53D1;&#x9001; lastZxid &#x7ED9; leader</li>
+<li>leader &#x6839;&#x636E;&#x81EA;&#x5DF1;&#x7684; lastZxid &#x4E0E; follower &#x7684; lastZxid &#x51B3;&#x5B9A;&#x540C;&#x6B65;&#x8FC7;&#x7A0B;<ul>
+<li>&#x5982;&#x679C; leader &#x7684;&#x6570;&#x636E;&#x66F4;&#x65B0;&#xFF0C;&#x90A3;&#x4E48;&#x53D1;&#x9001;&#x5269;&#x4F59;&#x6570;&#x636E;&#x7ED9; follower &#x5E76;&#x8981;&#x6C42;&#x5176; commit</li>
+<li>&#x5982;&#x679C; follower &#x7684;&#x6570;&#x636E;&#x66F4;&#x65B0;&#xFF0C;&#x90A3;&#x4E48;&#x8981;&#x6C42; follower &#x629B;&#x5F03;&#x65B0;&#x6570;&#x636E;&#xFF08;&#x672A;&#x88AB; commit&#xFF09;&#x76F4;&#x5230;&#x4E0E; leader &#x4FDD;&#x6301;&#x4E00;&#x81F4;</li>
+</ul>
+</li>
+</ul>
+<h3 id="&#x6D88;&#x606F;&#x5E7F;&#x64AD;&#xFF08;&#x7C7B;&#x4F3C;&#x4E8E;&#x4E24;&#x9636;&#x6BB5;&#x63D0;&#x4EA4;&#xFF09;">&#x6D88;&#x606F;&#x5E7F;&#x64AD;&#xFF08;&#x7C7B;&#x4F3C;&#x4E8E;&#x4E24;&#x9636;&#x6BB5;&#x63D0;&#x4EA4;&#xFF09;</h3>
+<p><img src="http://osbdeld5c.bkt.clouddn.com/18-5-23/33549566.jpg" alt=""></p>
 
                                 
                                 </section>
@@ -533,7 +554,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Zookeeper","level":"1.5.4","depth":2,"next":{"title":"其他","level":"1.6","depth":1,"path":"other/README.md","ref":"other/README.md","articles":[{"title":"Docker","level":"1.6.1","depth":2,"path":"other/docker.md","ref":"other/docker.md","articles":[]}]},"previous":{"title":"Spark","level":"1.5.3","depth":2,"path":"bigdata/spark.md","ref":"bigdata/spark.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"bigdata/zookeeper.md","mtime":"2018-05-22T02:25:03.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-22T02:25:54.178Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Zookeeper","level":"1.5.4","depth":2,"next":{"title":"其他","level":"1.6","depth":1,"path":"other/README.md","ref":"other/README.md","articles":[{"title":"Docker","level":"1.6.1","depth":2,"path":"other/docker.md","ref":"other/docker.md","articles":[]}]},"previous":{"title":"Spark","level":"1.5.3","depth":2,"path":"bigdata/spark.md","ref":"bigdata/spark.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"bigdata/zookeeper.md","mtime":"2018-05-23T03:37:11.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-23T03:37:24.849Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
