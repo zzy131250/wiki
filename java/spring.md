@@ -13,6 +13,9 @@
 ## IOC 容器视图
 ![](http://osbdeld5c.bkt.clouddn.com/18-4-2/25341818.jpg)
 
+## Spring MVC DispatcherServlet 处理流程
+![](http://osbdeld5c.bkt.clouddn.com/18-7-31/11499110.jpg)
+
 ## bean 循环依赖问题
 - 构造器循环依赖：无法解决，抛出 BeanCurrentlyInCreationException 异常
 - setter 循环依赖

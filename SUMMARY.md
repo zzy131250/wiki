@@ -23,5 +23,6 @@
     * [HBase](bigdata/hbase.md)
     * [Spark](bigdata/spark.md)
     * [Zookeeper](bigdata/zookeeper.md)
-* [其他](other/README.md)
-    * [Docker](other/docker.md)
+* [云计算](cloud/README.md)
+    * [Docker](cloud/docker.md)
+    * [Kubernetes](cloud/k8s.md)

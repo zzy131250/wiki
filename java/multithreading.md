@@ -4,6 +4,9 @@
 - Thread 只能单继承，而 Runnable 接口可以多实现
 - Runnable 只定义了作业，可以实现松耦合，更符合面向对象的特点
 
+## Java 线程状态及切换
+![](http://osbdeld5c.bkt.clouddn.com/18-7-26/72656135.jpg)
+
 ## Java 线程间通信方式
 - 共享变量(需要处理同步问题)
  - 实现 Runnable 接口
