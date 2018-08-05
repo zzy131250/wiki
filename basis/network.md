@@ -7,8 +7,10 @@
 - 5xx：服务器错误，服务器在处理请求的过程中发生了错误
 
 ## HTTP 1.1 新特性
-- 断点续传：Content-Range
-- 默认长连接：Keep-Alive
+- 断点续传
+  - 请求头：Range: bytes=0-499
+  - 响应头：Content-Range: bytes 0-499/22400，并使用 HTTP/1.1 206 Partial Content
+- 默认长连接：Connection: keep-alive
 
 ## HTTPS 通信过程
 ![](http://osbdeld5c.bkt.clouddn.com/18-4-4/94376821.jpg)

@@ -25,7 +25,7 @@ Java 中都是传值，即使是对象也只是传对象地址值的副本。
 ## Object 类的方法
 - hashCode()：返回对象的哈希值，默认根据对象地址计算，用来在 map 接口中对对象寻址，防止遍历调用 equals() ，提高效率
 - equals()：比较对象是否相等，默认比较对象地址。重写 equals() 时须同时重写 hashCode()，保证 equals 的两个对象 hashCode 也一样
- - 若 equals 的两个对象 A、B 的 hashCode 不一样，则放入 HashSet 时不会报错，但不符合实际，因为 HashSet 不允许重复元素
+ - 若 equals 的两个对象 A、B 的 hashCode 不一样，则都会被放入 HashSet（put 方法认为对象相同时，要求 hashCode 相同且equals 返回 true），但不符合实际，因为 A、B 应当认为是相同对象，只能放入一次
 - clone()：创建并返回当前对象的拷贝，默认浅拷贝
  - 浅拷贝：对于引用对象仅拷贝指针，指向相同的对象实例
  - 深拷贝：对于引用对象会建立新的对象实例。可使用序列化实现深拷贝
@@ -41,10 +41,12 @@ Java 中都是传值，即使是对象也只是传对象地址值的副本。
 - 都不能被实例化
 
 ### 区别
-- 抽象类可以有构造器，而接口不能有构造器
-- 抽象类只能单继承，接口可以多继承
-- 抽象类方法的修饰符可以不是 public，接口方法的修饰符都是 public 的
-- 抽象类可以有 main 方法，接口不行
+| | 抽象类 | 接口 |
+| ----- | ----- | ----- |
+| 构造器 | √ | × |
+| 多继承 | × | √ |
+| 非 public 方法 | √ | × |
+| main 方法 | √ | × |
 
 ## 内部类
 ### 成员内部类
@@ -77,5 +79,5 @@ Java 中都是传值，即使是对象也只是传对象地址值的副本。
 ### try - catch - finally
 - finally 在 try / catch 中的 return 语句执行完，返回结果之前执行
 - 若 finally 中有 return，则在 finally 中 return
-- finally 块中对 return 结果的更改不能影响到 try / catch 块中的结果
+- 若在 try / catch 块中 return，finally 块中对 return 结果的更改不会影响到 try / catch 块中的结果（相当于方法传值，如果是对象，可能有影响）
 - try 和 catch 块中都出现异常，若 finally 有 return，直接返回，不检查异常；若 finally 无 return，抛出异常
