@@ -74,7 +74,7 @@ Java 中都是传值，即使是对象也只是传对象地址值的副本。
  - RuntimeException（空指针）：编译器不检查
  - 受检查异常（IOException）：如果不处理，编译不会通过
 
-![](http://osbdeld5c.bkt.clouddn.com/18-4-10/10158020.jpg)
+![](http://zia-wiki.oss-cn-hangzhou.aliyuncs.com/18-11-3/26781872.jpg)
 
 ### try - catch - finally
 - finally 在 try / catch 中的 return 语句执行完，返回结果之前执行

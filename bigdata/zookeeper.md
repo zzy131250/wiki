@@ -14,4 +14,4 @@
  - 如果 follower 的数据更新，那么要求 follower 抛弃新数据（未被 commit）直到与 leader 保持一致
 
 ### 消息广播（类似于两阶段提交）
-![](http://osbdeld5c.bkt.clouddn.com/18-5-23/33549566.jpg)
+![](http://zia-wiki.oss-cn-hangzhou.aliyuncs.com/18-11-3/37606863.jpg)

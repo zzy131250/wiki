@@ -4,7 +4,7 @@ key 与 entry 均为弱引用，在 key 置为 null 之后，entry 放入 Refere
 
 ## ConcurrentHashMap
 ### JDK 7
-![](http://osbdeld5c.bkt.clouddn.com/18-3-31/15470637.jpg)
+![](http://zia-wiki.oss-cn-hangzhou.aliyuncs.com/18-11-3/12892777.jpg)
 
 ### JDK 8
-![](http://osbdeld5c.bkt.clouddn.com/18-3-31/82473966.jpg)
+![](http://zia-wiki.oss-cn-hangzhou.aliyuncs.com/18-11-3/68830328.jpg)

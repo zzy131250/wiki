@@ -1,6 +1,6 @@
 # Spark
 ## 整体框架
-![](http://osbdeld5c.bkt.clouddn.com/18-4-1/6536880.jpg)
+![](http://zia-wiki.oss-cn-hangzhou.aliyuncs.com/18-11-3/44945704.jpg)
 
 ## 核心组件
 ### RDD
@@ -20,16 +20,16 @@
 - 宽依赖：指⼦ RDD 的分区依赖于⽗ RDD 的所有分区，这是因为 shuffle 类操作要求所有⽗分区可⽤；是 spark 划分 stage 的边界
 
 ### Scheduler
-![](http://osbdeld5c.bkt.clouddn.com/18-4-1/69082993.jpg)
+![](http://zia-wiki.oss-cn-hangzhou.aliyuncs.com/18-11-3/62602135.jpg)
 
 ### Storage
-![](http://osbdeld5c.bkt.clouddn.com/18-4-1/74943960.jpg)
+![](http://zia-wiki.oss-cn-hangzhou.aliyuncs.com/18-11-3/165389.jpg)
 
 ### Shuffle
 #### Hash Shuffle v1
-![](http://osbdeld5c.bkt.clouddn.com/18-4-1/59732705.jpg)
+![](http://zia-wiki.oss-cn-hangzhou.aliyuncs.com/18-11-3/37954478.jpg)
 
 #### Hash Shuffle v2
-![](http://osbdeld5c.bkt.clouddn.com/18-4-1/36350633.jpg)
+![](http://zia-wiki.oss-cn-hangzhou.aliyuncs.com/18-11-3/22882906.jpg)
 
 #### Sort Shuffle

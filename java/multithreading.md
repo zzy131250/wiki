@@ -5,7 +5,7 @@
 - Runnable 只定义了作业，可以实现松耦合，更符合面向对象的特点
 
 ## Java 线程状态及切换
-![](http://osbdeld5c.bkt.clouddn.com/18-7-26/72656135.jpg)
+![](http://zia-wiki.oss-cn-hangzhou.aliyuncs.com/18-11-3/30718057.jpg)
 
 ## Java 线程间通信方式
 - 共享变量(需要处理同步问题)
@@ -25,7 +25,7 @@
 - 适用于变量在线程间隔离而在方法或类间共享的场景
 - get 和 set 的时候都会删除 key 为 null（threadlocal 实例已被回收）的 entry，但是如果长时间不调用，或者线程不销毁，则会出现内存泄漏
 
-![](http://osbdeld5c.bkt.clouddn.com/18-4-16/25253514.jpg)
+![](http://zia-wiki.oss-cn-hangzhou.aliyuncs.com/18-11-3/18559685.jpg)
 
 ## 死锁 vs 活锁 vs 饥饿
 ### 死锁
@@ -70,16 +70,9 @@
 ### holdsLock(Object obj)
 检测当前线程是否拥有某个对象的锁
 
-## Thread 状态 blocked vs waiting
-- blocked：当前线程在等待一个 monitor lock，比如等待执行 synchronized 代码块或者使用 synchronized 标记的方法
-- waiting：调用下列方法之一
- - 调用 Object 对象的 wait 方法，但没有指定超时值
- - 调用 Thread 对象的 join 方法，但没有指定超时值
- - 调用 LockSupport 对象的 park 方法
-
 ## 线程池
 ### 线程池处理流程
-![](http://osbdeld5c.bkt.clouddn.com/18-4-2/6345546.jpg)
+![](http://zia-wiki.oss-cn-hangzhou.aliyuncs.com/18-11-3/29100893.jpg)
 
 ### 线程池种类
 - FixedThreadPool：使用 LinkedBlockingQueue 无界队列，corePool 和 maximumPool 都是一个固定值

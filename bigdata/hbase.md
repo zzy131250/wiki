@@ -25,7 +25,7 @@
 按照 rowkey 范围水平分割
 
 ## 架构图
-![](http://osbdeld5c.bkt.clouddn.com/18-4-10/11715688.jpg)
+![](http://zia-wiki.oss-cn-hangzhou.aliyuncs.com/18-11-3/79169095.jpg)
 
 ### Zookeeper
 服务器状态监控，故障检测
@@ -45,10 +45,10 @@
 - HFile：磁盘中的有序键值
  - 使用顺序写入，写入很快速
  - 结构
-![](http://osbdeld5c.bkt.clouddn.com/18-4-12/12285315.jpg)
+![](http://zia-wiki.oss-cn-hangzhou.aliyuncs.com/18-11-3/15998375.jpg)
  
 ### 列族
-![](http://osbdeld5c.bkt.clouddn.com/18-4-12/86797257.jpg)
+![](http://zia-wiki.oss-cn-hangzhou.aliyuncs.com/18-11-3/41223398.jpg)
 
 ## 数据写入过程（LSM 架构）
 1. 写入 WAL 持久化，存在磁盘上，顺序增加行

@@ -6,7 +6,7 @@
 - 独占模式：只唤醒等待队列头节点
 - 共享模式：按顺序唤醒等待队列的共享节点
 
-![](http://osbdeld5c.bkt.clouddn.com/18-3-30/94992631.jpg)
+![](http://zia-wiki.oss-cn-hangzhou.aliyuncs.com/18-11-3/22602143.jpg)
 ### ReentrantLock
 使用继承自 AQS 的 Sync ，实现独占功能， state 表示重入次数
 ### CountDownLatch

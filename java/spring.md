@@ -8,13 +8,13 @@
 - 调用 ServletContextListener 的 contextInitialized() 方法，其中包含 spring 容器的创建和初始化
 
 ## 容器启动过程图
-![](http://osbdeld5c.bkt.clouddn.com/18-4-2/75402683.jpg)
+![](http://zia-wiki.oss-cn-hangzhou.aliyuncs.com/18-11-3/42746291.jpg)
 
 ## IOC 容器视图
-![](http://osbdeld5c.bkt.clouddn.com/18-4-2/25341818.jpg)
+![](http://zia-wiki.oss-cn-hangzhou.aliyuncs.com/18-11-3/61942929.jpg)
 
 ## Spring MVC DispatcherServlet 处理流程
-![](http://osbdeld5c.bkt.clouddn.com/18-7-31/11499110.jpg)
+![](http://zia-wiki.oss-cn-hangzhou.aliyuncs.com/18-11-3/6284231.jpg)
 
 ## bean 循环依赖问题
 - 构造器循环依赖：无法解决，抛出 BeanCurrentlyInCreationException 异常

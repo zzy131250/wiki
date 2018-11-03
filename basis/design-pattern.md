@@ -11,13 +11,13 @@
 
 ## 简单工厂模式 vs 工厂方法模式 vs 抽象工厂模式
 ### 简单工厂模式
-![](http://osbdeld5c.bkt.clouddn.com/18-4-11/43671429.jpg)
+![](http://zia-wiki.oss-cn-hangzhou.aliyuncs.com/18-10-27/39834301.jpg)
 
 ### 工厂方法模式
-![](http://osbdeld5c.bkt.clouddn.com/18-4-11/7604722.jpg)
+![](http://zia-wiki.oss-cn-hangzhou.aliyuncs.com/18-10-27/78106909.jpg)
 
 ### 抽象工厂模式
-![](http://osbdeld5c.bkt.clouddn.com/18-4-11/4888259.jpg)
+![](http://zia-wiki.oss-cn-hangzhou.aliyuncs.com/18-10-27/50044289.jpg)
 
 ### 对比
 - 工厂方法模式通过引入工厂等级结构，一个工厂只生产一类产品，解决了简单工厂模式中工厂类职责太重的问题

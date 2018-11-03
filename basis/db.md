@@ -25,10 +25,10 @@
 - delete 语句是 dml，这个操作会放到 rollback segment 中，事务提交之后才生效；truncate、drop 是 ddl，操作立即生效，不能回滚
 
 ## 数据库事务隔离级别原理
-![](http://osbdeld5c.bkt.clouddn.com/18-3-31/1597284.jpg)
+![](http://zia-wiki.oss-cn-hangzhou.aliyuncs.com/18-10-27/20501610.jpg)
 
 ## 数据库主从同步对比
-![](http://osbdeld5c.bkt.clouddn.com/18-3-31/16674531.jpg)
+![](http://zia-wiki.oss-cn-hangzhou.aliyuncs.com/18-10-27/27150369.jpg)
 
 ## Copy-On-Write vs MVCC
 - Copy-On-Write：在写入时新建一个块，写入新块中，再替换原有块；适合读多写少的情景，满足最终一致性
