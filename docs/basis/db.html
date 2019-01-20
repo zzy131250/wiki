@@ -531,9 +531,13 @@
                                 <h1 id="&#x6570;&#x636E;&#x5E93;">&#x6570;&#x636E;&#x5E93;</h1>
 <h2 id="&#x5173;&#x4E8E;&#x8303;&#x5F0F;&#x7684;&#x89E3;&#x91CA;">&#x5173;&#x4E8E;&#x8303;&#x5F0F;&#x7684;&#x89E3;&#x91CA;</h2>
 <p><a href="https://www.zhihu.com/question/24696366/answer/29189700" target="_blank">&#x77E5;&#x4E4E;&#x56DE;&#x7B54;</a></p>
-<h2 id="&#x805A;&#x96C6;&#x7D22;&#x5F15;-vs-&#x975E;&#x805A;&#x96C6;&#x7D22;&#x5F15;">&#x805A;&#x96C6;&#x7D22;&#x5F15; vs &#x975E;&#x805A;&#x96C6;&#x7D22;&#x5F15;</h2>
+<h2 id="&#x7D22;&#x5F15;&#x76F8;&#x5173;">&#x7D22;&#x5F15;&#x76F8;&#x5173;</h2>
 <ul>
-<li>&#x805A;&#x96C6;&#x7D22;&#x5F15;&#xFF1A;&#x7D22;&#x5F15;&#x7684;&#x903B;&#x8F91;&#x987A;&#x5E8F;&#x51B3;&#x5B9A;&#x6570;&#x636E;&#x7684;&#x7269;&#x7406;&#x987A;&#x5E8F;</li>
+<li>&#x666E;&#x901A;&#x7D22;&#x5F15;&#xFF1A;&#x6700;&#x57FA;&#x672C;&#x7684;&#x7D22;&#x5F15;&#xFF0C;&#x6CA1;&#x6709;&#x4EFB;&#x4F55;&#x9650;&#x5236;</li>
+<li>&#x552F;&#x4E00;&#x7D22;&#x5F15;&#xFF1A;&#x7D22;&#x5F15;&#x5217;&#x7684;&#x503C;&#x5FC5;&#x987B;&#x552F;&#x4E00;&#xFF0C;&#x4F46;&#x5141;&#x8BB8;&#x6709;&#x7A7A;&#x503C;</li>
+<li>&#x4E3B;&#x952E;&#x7D22;&#x5F15;&#xFF1A;&#x4E00;&#x79CD;&#x7279;&#x6B8A;&#x7684;&#x552F;&#x4E00;&#x7D22;&#x5F15;&#xFF0C;&#x4E0D;&#x5141;&#x8BB8;&#x6709;&#x7A7A;&#x503C;</li>
+<li>&#x8F85;&#x52A9;&#x7D22;&#x5F15;&#xFF1A;&#x53F6;&#x5B50;&#x8282;&#x70B9;&#x5B58;&#x653E;&#x4E86;&#x4E3B;&#x952E;&#x7D22;&#x5F15;&#x7684;&#x503C;&#xFF0C;&#x518D;&#x6839;&#x636E;&#x4E3B;&#x952E;&#x7D22;&#x5F15;&#x83B7;&#x53D6;&#x6570;&#x636E;</li>
+<li>&#x805A;&#x96C6;&#x7D22;&#x5F15;&#xFF1A;&#x7D22;&#x5F15;&#x7684;&#x903B;&#x8F91;&#x987A;&#x5E8F;&#x51B3;&#x5B9A;&#x6570;&#x636E;&#x7684;&#x7269;&#x7406;&#x987A;&#x5E8F;&#xFF0C;&#x5982;&#x4E3B;&#x952E;&#x7D22;&#x5F15;</li>
 <li>&#x975E;&#x805A;&#x96C6;&#x7D22;&#x5F15;&#xFF1A;&#x7D22;&#x5F15;&#x7684;&#x903B;&#x8F91;&#x987A;&#x5E8F;&#x4E0E;&#x6570;&#x636E;&#x7684;&#x7269;&#x7406;&#x987A;&#x5E8F;&#x4E0D;&#x540C;</li>
 </ul>
 <h2 id="&#x8986;&#x76D6;&#x7D22;&#x5F15;">&#x8986;&#x76D6;&#x7D22;&#x5F15;</h2>
@@ -597,6 +601,21 @@
 </tr>
 </tbody>
 </table>
+<h2 id="mysql-&#x4E8B;&#x52A1;&#x65E5;&#x5FD7;">Mysql &#x4E8B;&#x52A1;&#x65E5;&#x5FD7;</h2>
+<p>Mysql&#x901A;&#x8FC7;&#x65E5;&#x5FD7;&#x6765;&#x4FDD;&#x8BC1;&#x4E8B;&#x52A1;&#x7684;&#x7279;&#x6027;&#x3002;</p>
+<ul>
+<li>Redo Log<ul>
+<li>&#x5B9E;&#x73B0;&#x4E86;&#x4E8B;&#x52A1;&#x7684;&#x6301;&#x4E45;&#x6027;</li>
+<li>&#x8BB0;&#x5F55;&#x6BCF;&#x6761;&#x6570;&#x636E;&#x5728;&#x64CD;&#x4F5C;&#x540E;&#x7684;&#x72B6;&#x6001;&#xFF0C;&#x5728;&#x4E8B;&#x52A1;&#x63D0;&#x4EA4;&#x4E4B;&#x524D;&#x8FDB;&#x884C;&#x6301;&#x4E45;&#x5316;&#xFF0C;&#x7528;&#x4E8E;&#x4E8B;&#x52A1;&#x6062;&#x590D;</li>
+</ul>
+</li>
+<li>Undo Log<ul>
+<li>&#x5B9E;&#x73B0;&#x4E8B;&#x52A1;&#x7684;&#x539F;&#x5B50;&#x6027;&#x548C; MVCC</li>
+<li>&#x8BB0;&#x5F55;&#x6BCF;&#x6761;&#x6570;&#x636E;&#x5728;&#x64CD;&#x4F5C;&#x524D;&#x7684;&#x72B6;&#x6001;&#xFF0C;&#x53EF;&#x7528;&#x4E8E;&#x4E8B;&#x52A1;&#x56DE;&#x6EDA;</li>
+<li>&#x4E0D;&#x662F;&#x7269;&#x7406;&#x6062;&#x590D;&#x6570;&#x636E;&#xFF0C;&#x800C;&#x662F;&#x903B;&#x8F91;&#x6062;&#x590D;&#x6570;&#x636E;&#xFF1B;&#x5373;&#x5BF9;&#x4E8E; insert &#x8BED;&#x53E5;&#xFF0C;&#x8BB0;&#x5F55;&#x7684;&#x662F; delete&#xFF0C;&#x5BF9;&#x4E8E; update &#x4E5F;&#x8BB0;&#x5F55;&#x7684;&#x662F;&#x76F8;&#x53CD;&#x7684; update</li>
+</ul>
+</li>
+</ul>
 <h2 id="mysql-innodb-&#x9501;">Mysql InnoDB &#x9501;</h2>
 <ul>
 <li>&#x8868;&#x9501;<ul>
@@ -736,7 +755,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"数据库","level":"1.2.5","depth":2,"next":{"title":"Linux工具","level":"1.2.6","depth":2,"path":"basis/linux.md","ref":"basis/linux.md","articles":[]},"previous":{"title":"数据结构与算法","level":"1.2.4","depth":2,"path":"basis/ds-algo.md","ref":"basis/ds-algo.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"basis/db.md","mtime":"2018-10-27T03:55:08.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-03T13:43:33.095Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"数据库","level":"1.2.5","depth":2,"next":{"title":"Linux工具","level":"1.2.6","depth":2,"path":"basis/linux.md","ref":"basis/linux.md","articles":[]},"previous":{"title":"数据结构与算法","level":"1.2.4","depth":2,"path":"basis/ds-algo.md","ref":"basis/ds-algo.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"basis/db.md","mtime":"2019-01-20T13:01:24.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-01-20T13:02:03.306Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
