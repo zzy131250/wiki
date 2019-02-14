@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Java · GitBook</title>
+        <title>服务器 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="basis.html" />
+    <link rel="next" href="jvm.html" />
     
     
-    <link rel="prev" href="../basis/linux.html" />
+    <link rel="prev" href="interview.html" />
     
 
     </head>
@@ -199,7 +199,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3" data-path="./">
+        <li class="chapter " data-level="1.3" data-path="./">
             
                 <a href="./">
             
@@ -278,7 +278,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.6" data-path="server.html">
+        <li class="chapter active" data-level="1.3.6" data-path="server.html">
             
                 <a href="server.html">
             
@@ -571,7 +571,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Java</a>
+        <a href=".." >服务器</a>
     </h1>
 </div>
 
@@ -586,7 +586,22 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="java">Java</h1>
+                                <h1 id="server">Server</h1>
+<h2 id="netty">Netty</h2>
+<h3 id="buffer">buffer</h3>
+<ul>
+<li>CompositeByteBuf&#xFF1A;&#x7531;&#x591A;&#x4E2A; ByteBuf &#x7EC4;&#x5408;&#x800C;&#x6210;&#xFF0C;&#x53EF;&#x4EE5;&#x770B;&#x505A;&#x4E00;&#x4E2A;&#x6574;&#x4F53;&#x8BFB;&#x5199;&#x3002;&#x76F4;&#x63A5;&#x4FDD;&#x5B58;&#x6BCF;&#x4E2A; component &#x7684;&#x5F15;&#x7528;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x5F00;&#x8F9F;&#x65B0;&#x7684;&#x5185;&#x5B58;&#xFF0C;&#x5B9E;&#x73B0;&#x4E86;&#x201C;&#x96F6;&#x62F7;&#x8D1D;&#x201D;</li>
+<li>BufferBuf &#x7684;&#x5F15;&#x7528;&#x8BA1;&#x6570;<ul>
+<li>&#x4F7F;&#x7528; retain() &#x65B9;&#x6CD5;&#x589E;&#x52A0;&#x5F15;&#x7528;&#x8BA1;&#x6570;</li>
+<li>&#x5BF9;&#x8C61;&#x7684;&#x9500;&#x6BC1;&#xFF1A;&#x6700;&#x540E;&#x8BBF;&#x95EE;&#x5F15;&#x7528;&#x8BA1;&#x6570;&#x5BF9;&#x8C61;&#x7684;&#x90E8;&#x5206;&#x8D1F;&#x8D23;&#x5BF9;&#x8C61;&#x7684;&#x9500;&#x6BC1;<ul>
+<li>&#x5982;&#x679C;&#x4E00;&#x4E2A;&#x53D1;&#x9001;&#x7EC4;&#x4EF6;&#x8981;&#x4F20;&#x9012;&#x4E00;&#x4E2A;&#x5F15;&#x7528;&#x8BA1;&#x6570;&#x5BF9;&#x8C61;&#x5230;&#x53E6;&#x4E00;&#x4E2A;&#x63A5;&#x6536;&#x7EC4;&#x4EF6;&#xFF0C;&#x53D1;&#x9001;&#x7EC4;&#x4EF6;&#x901A;&#x5E38;&#x4E0D;&#x9700;&#x8981;&#x8D1F;&#x8D23;&#x53BB;&#x9500;&#x6BC1;&#x5BF9;&#x8C61;&#xFF0C;&#x800C;&#x662F;&#x5C06;&#x8FD9;&#x4E2A;&#x9500;&#x6BC1;&#x7684;&#x4EFB;&#x52A1;&#x63A8;&#x5EF6;&#x5230;&#x63A5;&#x6536;&#x7EC4;&#x4EF6;</li>
+<li>&#x5982;&#x679C;&#x4E00;&#x4E2A;&#x7EC4;&#x4EF6;&#x6D88;&#x8D39;&#x4E86;&#x4E00;&#x4E2A;&#x5F15;&#x7528;&#x8BA1;&#x6570;&#x5BF9;&#x8C61;&#xFF0C;&#x5E76;&#x4E14;&#x4E0D;&#x77E5;&#x9053;&#x8C01;&#x4F1A;&#x518D;&#x8BBF;&#x95EE;&#x5B83;&#xFF08;&#x4F8B;&#x5982;&#xFF0C;&#x4E0D;&#x4F1A;&#x518D;&#x5C06;&#x5F15;&#x7528;&#x53D1;&#x9001;&#x5230;&#x53E6;&#x4E00;&#x4E2A;&#x7EC4;&#x4EF6;&#xFF09;&#xFF0C;&#x90A3;&#x4E48;&#xFF0C;&#x8FD9;&#x4E2A;&#x7EC4;&#x4EF6;&#x8D1F;&#x8D23;&#x9500;&#x6BC1;&#x5DE5;&#x4F5C;</li>
+<li>&#x8C03;&#x7528; ByteBuf.duplicate()&#x3001;ByteBuf.slice()&#x548C;ByteBuf.order(ByteOrder) &#x4E09;&#x4E2A;&#x65B9;&#x6CD5;&#xFF0C;&#x4F1A;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5B50;&#x7F13;&#x51B2;&#x533A;&#xFF0C;&#x5B50;&#x7F13;&#x51B2;&#x533A;&#x5171;&#x4EAB;&#x7236;&#x7F13;&#x51B2;&#x533A;&#x7684;&#x5185;&#x5B58;&#x533A;&#x57DF;&#x3002;&#x5B50;&#x7F13;&#x51B2;&#x533A;&#x6CA1;&#x6709;&#x81EA;&#x5DF1;&#x7684;&#x5F15;&#x7528;&#x8BA1;&#x6570;&#xFF0C;&#x800C;&#x662F;&#x5171;&#x4EAB;&#x7236;&#x7F13;&#x51B2;&#x533A;&#x7684;&#x5F15;&#x7528;&#x8BA1;&#x6570;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 
                                 
                                 </section>
@@ -614,12 +629,12 @@
 
             
                 
-                <a href="../basis/linux.html" class="navigation navigation-prev " aria-label="Previous page: Linux工具">
+                <a href="interview.html" class="navigation navigation-prev " aria-label="Previous page: Java面试资源">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="basis.html" class="navigation navigation-next " aria-label="Next page: 基础">
+                <a href="jvm.html" class="navigation navigation-next " aria-label="Next page: JVM">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -630,7 +645,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Java","level":"1.3","depth":1,"next":{"title":"基础","level":"1.3.1","depth":2,"path":"java/basis.md","ref":"java/basis.md","articles":[]},"previous":{"title":"Linux工具","level":"1.2.6","depth":2,"path":"basis/linux.md","ref":"basis/linux.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"java/README.md","mtime":"2018-04-01T01:56:15.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-14T05:31:01.994Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"服务器","level":"1.3.6","depth":2,"next":{"title":"JVM","level":"1.3.7","depth":2,"path":"java/jvm.md","ref":"java/jvm.md","articles":[]},"previous":{"title":"Java面试资源","level":"1.3.5","depth":2,"path":"java/interview.md","ref":"java/interview.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"java/server.md","mtime":"2019-02-06T14:06:31.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-14T05:31:01.994Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
