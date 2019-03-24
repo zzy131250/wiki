@@ -142,7 +142,20 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.3" data-path="../basis/design-pattern.html">
+        <li class="chapter " data-level="1.2.3" data-path="../basis/architecture.html">
+            
+                <a href="../basis/architecture.html">
+            
+                    
+                    架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../basis/design-pattern.html">
             
                 <a href="../basis/design-pattern.html">
             
@@ -155,7 +168,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.4" data-path="../basis/ds-algo.html">
+        <li class="chapter " data-level="1.2.5" data-path="../basis/ds-algo.html">
             
                 <a href="../basis/ds-algo.html">
             
@@ -168,7 +181,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.5" data-path="../basis/db.html">
+        <li class="chapter " data-level="1.2.6" data-path="../basis/db.html">
             
                 <a href="../basis/db.html">
             
@@ -181,7 +194,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.6" data-path="../basis/linux.html">
+        <li class="chapter " data-level="1.2.7" data-path="../basis/linux.html">
             
                 <a href="../basis/linux.html">
             
@@ -394,7 +407,20 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.5.1" data-path="../go/scheduler.html">
+        <li class="chapter " data-level="1.5.1" data-path="../go/channel.html">
+            
+                <a href="../go/channel.html">
+            
+                    
+                    Channel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../go/scheduler.html">
             
                 <a href="../go/scheduler.html">
             
@@ -407,7 +433,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.2" data-path="../go/sync.html">
+        <li class="chapter " data-level="1.5.3" data-path="../go/sync.html">
             
                 <a href="../go/sync.html">
             
@@ -594,6 +620,14 @@
 <li>&#x72EC;&#x5360;&#x6A21;&#x5F0F;&#xFF1A;&#x53EA;&#x5524;&#x9192;&#x7B49;&#x5F85;&#x961F;&#x5217;&#x5934;&#x8282;&#x70B9;</li>
 <li>&#x5171;&#x4EAB;&#x6A21;&#x5F0F;&#xFF1A;&#x6309;&#x987A;&#x5E8F;&#x5524;&#x9192;&#x7B49;&#x5F85;&#x961F;&#x5217;&#x7684;&#x5171;&#x4EAB;&#x8282;&#x70B9;</li>
 </ul>
+<h4 id="&#x8282;&#x70B9;&#x72B6;&#x6001;">&#x8282;&#x70B9;&#x72B6;&#x6001;</h4>
+<ul>
+<li>SIGNAL&#xFF1A;&#x672C;&#x8282;&#x70B9;&#x7684;&#x4E00;&#x4E2A;&#x540E;&#x7EE7;&#x8282;&#x70B9;&#x88AB;&#x963B;&#x585E;&#xFF08;&#x6216;&#x5C06;&#x8981;&#x88AB;&#x963B;&#x585E;&#xFF09;&#xFF0C;&#x6240;&#x4EE5;&#x5F53;&#x672C;&#x8282;&#x70B9;&#x91CA;&#x653E;&#x6216;&#x53D6;&#x6D88;&#x65F6;&#xFF0C;&#x5B83;&#x5FC5;&#x987B;&#x5524;&#x8D77;&#x540E;&#x7EE7;&#x8282;&#x70B9;&#x3002;&#x540E;&#x7EE7;&#x8282;&#x70B9;&#x5728; acquire &#x5931;&#x8D25;&#x540E;&#x4F1A;&#x5728;&#x672C;&#x8282;&#x70B9;&#x6CE8;&#x518C;&#x4E00;&#x4E2A; signal&#xFF0C;&#x7B49;&#x5F85;&#x91CD;&#x8BD5; acquire &#x65B9;&#x6CD5;&#xFF08;&#x89C1; shouldParkAfterFailedAcquire &#x65B9;&#x6CD5;&#xFF09;&#x3002;</li>
+<li>CANCELLED&#xFF1A;&#x672C;&#x8282;&#x70B9;&#x7531;&#x4E8E;&#x8D85;&#x65F6;&#x6216;&#x4E2D;&#x65AD;&#x800C;&#x88AB;&#x53D6;&#x6D88;&#x3002;&#x5904;&#x4E8E;&#x8BE5;&#x72B6;&#x6001;&#x7684;&#x8282;&#x70B9;&#x4E0D;&#x518D;&#x6539;&#x53D8;&#x72B6;&#x6001;&#x3002;&#x7279;&#x522B;&#x7684;&#xFF0C;&#x5728; CANCELLED &#x8282;&#x70B9;&#x4E0A;&#x7684;&#x7EBF;&#x7A0B;&#x6C38;&#x8FDC;&#x4E0D;&#x4F1A;&#x518D;&#x6B21;&#x963B;&#x585E;&#x3002;</li>
+<li>CONDITION&#xFF1A;&#x672C;&#x8282;&#x70B9;&#x5728;&#x6761;&#x4EF6;&#x961F;&#x5217;&#x4E0A;&#x3002;&#x5B83;&#x4E0D;&#x4F1A;&#x88AB;&#x7528;&#x5728;&#x540C;&#x6B65;&#x961F;&#x5217;&#x4E0A;&#xFF0C;&#x9664;&#x975E;&#x88AB;&#x8F6C;&#x6362;&#xFF08;&#x88AB;&#x8BBE;&#x7F6E;&#x4E3A;0&#xFF09;&#x8FC7;&#x540E;&#x3002;&#x8BE5;&#x503C;&#x4E0E;&#x5176;&#x4ED6;&#x503C;&#x5747;&#x65E0;&#x5173;&#x8054;&#xFF0C;&#x5728;&#x6B64;&#x5904;&#x4F7F;&#x7528;&#x4EC5;&#x4E3A;&#x4E86;&#x7B80;&#x5316;&#x6D41;&#x7A0B;&#x3002;</li>
+<li>PROPAGATE&#xFF1A;&#x5171;&#x4EAB;&#x6A21;&#x5F0F;&#x7684;&#x8282;&#x70B9;&#x91CA;&#x653E;&#x5E94;&#x8BE5;&#x88AB;&#x4F20;&#x64AD;&#x5230;&#x5176;&#x4ED6;&#x8282;&#x70B9;&#x3002;&#x8BE5;&#x503C;&#x5728; doReleaseShared &#x65B9;&#x6CD5;&#x4E2D;&#x88AB;&#x8BBE;&#x7F6E;&#xFF08;&#x4EC5;&#x5728; head &#x8282;&#x70B9;&#x4E2D;&#xFF09;&#x6765;&#x786E;&#x4FDD;&#x4F1A;&#x7EE7;&#x7EED;&#x4F20;&#x64AD;&#xFF0C;&#x5373;&#x4F7F;&#x5176;&#x4ED6;&#x64CD;&#x4F5C;&#x5DF2;&#x88AB;&#x963B;&#x585E;&#x3002;</li>
+<li>0&#xFF1A;&#x4E0D;&#x662F;&#x4E0A;&#x9762;&#x7684;&#x4EFB;&#x4F55;&#x4E00;&#x4E2A;&#x503C;&#x3002;</li>
+</ul>
 <p><img src="http://zia-wiki.oss-cn-hangzhou.aliyuncs.com/18-11-3/22602143.jpg" alt=""></p>
 <h3 id="reentrantlock">ReentrantLock</h3>
 <p>&#x4F7F;&#x7528;&#x7EE7;&#x627F;&#x81EA; AQS &#x7684; Sync &#xFF0C;&#x5B9E;&#x73B0;&#x72EC;&#x5360;&#x529F;&#x80FD;&#xFF0C; state &#x8868;&#x793A;&#x91CD;&#x5165;&#x6B21;&#x6570;</p>
@@ -661,7 +695,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"锁","level":"1.3.9","depth":2,"next":{"title":"UML","level":"1.3.10","depth":2,"path":"java/uml.md","ref":"java/uml.md","articles":[]},"previous":{"title":"Spring","level":"1.3.8","depth":2,"path":"java/spring.md","ref":"java/spring.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"java/lock.md","mtime":"2018-11-03T13:33:04.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-14T05:39:49.368Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"锁","level":"1.3.9","depth":2,"next":{"title":"UML","level":"1.3.10","depth":2,"path":"java/uml.md","ref":"java/uml.md","articles":[]},"previous":{"title":"Spring","level":"1.3.8","depth":2,"path":"java/spring.md","ref":"java/spring.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"java/lock.md","mtime":"2019-03-19T12:24:26.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-24T03:58:13.105Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
