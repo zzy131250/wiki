@@ -6,6 +6,14 @@
 - 独占模式：只唤醒等待队列头节点
 - 共享模式：按顺序唤醒等待队列的共享节点
 
+#### 节点状态
+
+- SIGNAL：本节点的一个后继节点被阻塞（或将要被阻塞），所以当本节点释放或取消时，它必须唤起后继节点。后继节点在 acquire 失败后会在本节点注册一个 signal，等待重试 acquire 方法（见 shouldParkAfterFailedAcquire 方法）。
+- CANCELLED：本节点由于超时或中断而被取消。处于该状态的节点不再改变状态。特别的，在 CANCELLED 节点上的线程永远不会再次阻塞。
+- CONDITION：本节点在条件队列上。它不会被用在同步队列上，除非被转换（被设置为0）过后。该值与其他值均无关联，在此处使用仅为了简化流程。
+- PROPAGATE：共享模式的节点释放应该被传播到其他节点。该值在 doReleaseShared 方法中被设置（仅在 head 节点中）来确保会继续传播，即使其他操作已被阻塞。
+- 0：不是上面的任何一个值。
+
 ![](http://zia-wiki.oss-cn-hangzhou.aliyuncs.com/18-11-3/22602143.jpg)
 ### ReentrantLock
 使用继承自 AQS 的 Sync ，实现独占功能， state 表示重入次数
