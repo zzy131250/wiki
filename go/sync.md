@@ -5,7 +5,8 @@
 - 通过把内存访问时间、内存地址、操作类型（读还是写）记录下来，再遍历检测其中访问同一块内存区域的操作间是否满足 happens-before，来确定是否存在 race
 
 ## 条件变量 sync.Cond
-###  禁止拷贝，通过 noCopy 变量实现，可在 go vet 中进行检测
+### 禁止拷贝
+通过 noCopy 变量实现，可在 go vet 中进行检测
 ```go
 type Cond struct {
 	noCopy noCopy
@@ -43,10 +44,22 @@ func (c *copyChecker) check() {
 - Put 和 Get 对共享池操作时，都是操作末尾对象（Put 将对象放到共享池末尾，Get 从共享池尾部获取对象）
 
 ### 结构
-每个 P 包含一个本地池和一个共享池，与 P 关联的 G 总是先尝试从本地池存取对象
+每个 Pool 在 每个P 中都包含一个本地池和一个共享池，与 P 关联的 G 总是先尝试从本地池存取对象
 
 ![](https://zia-wiki.oss-cn-hangzhou.aliyuncs.com/19-3-24/51301775.jpg)
 
 ### 获取临时对象的步骤
 
 ![](https://zia-wiki.oss-cn-hangzhou.aliyuncs.com/19-3-24/87723265.jpg)
+
+## 并发安全字典 sync.Map
+- 包含一个只读的 map，名为 read，类型为 sync/atomic.Value，可被看做是一个快照
+  - 不允许增减键，但允许改变值，值的改变使用原子操作
+  - 保存的键值对可能不全
+- 包含一个读写的 map，名为 dirty，对它的访问需要锁
+  - 保存全部键值对，且不包含已被逻辑删除的键值对
+- 数据存取都是先尝试 read，再尝试 dirty
+![](https://zia-wiki.oss-cn-hangzhou.aliyuncs.com/19-3-26/16785228.jpg)
+- read 和 dirty 在一定条件下会互转
+  - read -> dirty：有新的键值对存入（Store 和 LoadOrStore），转换时会将 read 中 nil 的键逻辑删除
+  - dirty -> read：misses 达到 dirty 的长度，表明从 dirty 查询的次数足够多（Load 和 LoadOrStore）

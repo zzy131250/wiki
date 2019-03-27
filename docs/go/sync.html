@@ -620,7 +620,8 @@
 <li>&#x901A;&#x8FC7;&#x628A;&#x5185;&#x5B58;&#x8BBF;&#x95EE;&#x65F6;&#x95F4;&#x3001;&#x5185;&#x5B58;&#x5730;&#x5740;&#x3001;&#x64CD;&#x4F5C;&#x7C7B;&#x578B;&#xFF08;&#x8BFB;&#x8FD8;&#x662F;&#x5199;&#xFF09;&#x8BB0;&#x5F55;&#x4E0B;&#x6765;&#xFF0C;&#x518D;&#x904D;&#x5386;&#x68C0;&#x6D4B;&#x5176;&#x4E2D;&#x8BBF;&#x95EE;&#x540C;&#x4E00;&#x5757;&#x5185;&#x5B58;&#x533A;&#x57DF;&#x7684;&#x64CD;&#x4F5C;&#x95F4;&#x662F;&#x5426;&#x6EE1;&#x8DB3; happens-before&#xFF0C;&#x6765;&#x786E;&#x5B9A;&#x662F;&#x5426;&#x5B58;&#x5728; race</li>
 </ul>
 <h2 id="&#x6761;&#x4EF6;&#x53D8;&#x91CF;-synccond">&#x6761;&#x4EF6;&#x53D8;&#x91CF; sync.Cond</h2>
-<h3 id="&#x7981;&#x6B62;&#x62F7;&#x8D1D;&#xFF0C;&#x901A;&#x8FC7;-nocopy-&#x53D8;&#x91CF;&#x5B9E;&#x73B0;&#xFF0C;&#x53EF;&#x5728;-go-vet-&#x4E2D;&#x8FDB;&#x884C;&#x68C0;&#x6D4B;">&#x7981;&#x6B62;&#x62F7;&#x8D1D;&#xFF0C;&#x901A;&#x8FC7; noCopy &#x53D8;&#x91CF;&#x5B9E;&#x73B0;&#xFF0C;&#x53EF;&#x5728; go vet &#x4E2D;&#x8FDB;&#x884C;&#x68C0;&#x6D4B;</h3>
+<h3 id="&#x7981;&#x6B62;&#x62F7;&#x8D1D;">&#x7981;&#x6B62;&#x62F7;&#x8D1D;</h3>
+<p>&#x901A;&#x8FC7; noCopy &#x53D8;&#x91CF;&#x5B9E;&#x73B0;&#xFF0C;&#x53EF;&#x5728; go vet &#x4E2D;&#x8FDB;&#x884C;&#x68C0;&#x6D4B;</p>
 <pre><code class="lang-go"><span class="hljs-keyword">type</span> Cond <span class="hljs-keyword">struct</span> {
     noCopy noCopy
     ...
@@ -657,10 +658,29 @@
 <li>Put &#x548C; Get &#x5BF9;&#x5171;&#x4EAB;&#x6C60;&#x64CD;&#x4F5C;&#x65F6;&#xFF0C;&#x90FD;&#x662F;&#x64CD;&#x4F5C;&#x672B;&#x5C3E;&#x5BF9;&#x8C61;&#xFF08;Put &#x5C06;&#x5BF9;&#x8C61;&#x653E;&#x5230;&#x5171;&#x4EAB;&#x6C60;&#x672B;&#x5C3E;&#xFF0C;Get &#x4ECE;&#x5171;&#x4EAB;&#x6C60;&#x5C3E;&#x90E8;&#x83B7;&#x53D6;&#x5BF9;&#x8C61;&#xFF09;</li>
 </ul>
 <h3 id="&#x7ED3;&#x6784;">&#x7ED3;&#x6784;</h3>
-<p>&#x6BCF;&#x4E2A; P &#x5305;&#x542B;&#x4E00;&#x4E2A;&#x672C;&#x5730;&#x6C60;&#x548C;&#x4E00;&#x4E2A;&#x5171;&#x4EAB;&#x6C60;&#xFF0C;&#x4E0E; P &#x5173;&#x8054;&#x7684; G &#x603B;&#x662F;&#x5148;&#x5C1D;&#x8BD5;&#x4ECE;&#x672C;&#x5730;&#x6C60;&#x5B58;&#x53D6;&#x5BF9;&#x8C61;</p>
+<p>&#x6BCF;&#x4E2A; Pool &#x5728; &#x6BCF;&#x4E2A;P &#x4E2D;&#x90FD;&#x5305;&#x542B;&#x4E00;&#x4E2A;&#x672C;&#x5730;&#x6C60;&#x548C;&#x4E00;&#x4E2A;&#x5171;&#x4EAB;&#x6C60;&#xFF0C;&#x4E0E; P &#x5173;&#x8054;&#x7684; G &#x603B;&#x662F;&#x5148;&#x5C1D;&#x8BD5;&#x4ECE;&#x672C;&#x5730;&#x6C60;&#x5B58;&#x53D6;&#x5BF9;&#x8C61;</p>
 <p><img src="https://zia-wiki.oss-cn-hangzhou.aliyuncs.com/19-3-24/51301775.jpg" alt=""></p>
 <h3 id="&#x83B7;&#x53D6;&#x4E34;&#x65F6;&#x5BF9;&#x8C61;&#x7684;&#x6B65;&#x9AA4;">&#x83B7;&#x53D6;&#x4E34;&#x65F6;&#x5BF9;&#x8C61;&#x7684;&#x6B65;&#x9AA4;</h3>
 <p><img src="https://zia-wiki.oss-cn-hangzhou.aliyuncs.com/19-3-24/87723265.jpg" alt=""></p>
+<h2 id="&#x5E76;&#x53D1;&#x5B89;&#x5168;&#x5B57;&#x5178;-syncmap">&#x5E76;&#x53D1;&#x5B89;&#x5168;&#x5B57;&#x5178; sync.Map</h2>
+<ul>
+<li>&#x5305;&#x542B;&#x4E00;&#x4E2A;&#x53EA;&#x8BFB;&#x7684; map&#xFF0C;&#x540D;&#x4E3A; read&#xFF0C;&#x7C7B;&#x578B;&#x4E3A; sync/atomic.Value&#xFF0C;&#x53EF;&#x88AB;&#x770B;&#x505A;&#x662F;&#x4E00;&#x4E2A;&#x5FEB;&#x7167;<ul>
+<li>&#x4E0D;&#x5141;&#x8BB8;&#x589E;&#x51CF;&#x952E;&#xFF0C;&#x4F46;&#x5141;&#x8BB8;&#x6539;&#x53D8;&#x503C;&#xFF0C;&#x503C;&#x7684;&#x6539;&#x53D8;&#x4F7F;&#x7528;&#x539F;&#x5B50;&#x64CD;&#x4F5C;</li>
+<li>&#x4FDD;&#x5B58;&#x7684;&#x952E;&#x503C;&#x5BF9;&#x53EF;&#x80FD;&#x4E0D;&#x5168;</li>
+</ul>
+</li>
+<li>&#x5305;&#x542B;&#x4E00;&#x4E2A;&#x8BFB;&#x5199;&#x7684; map&#xFF0C;&#x540D;&#x4E3A; dirty&#xFF0C;&#x5BF9;&#x5B83;&#x7684;&#x8BBF;&#x95EE;&#x9700;&#x8981;&#x9501;<ul>
+<li>&#x4FDD;&#x5B58;&#x5168;&#x90E8;&#x952E;&#x503C;&#x5BF9;&#xFF0C;&#x4E14;&#x4E0D;&#x5305;&#x542B;&#x5DF2;&#x88AB;&#x903B;&#x8F91;&#x5220;&#x9664;&#x7684;&#x952E;&#x503C;&#x5BF9;</li>
+</ul>
+</li>
+<li>&#x6570;&#x636E;&#x5B58;&#x53D6;&#x90FD;&#x662F;&#x5148;&#x5C1D;&#x8BD5; read&#xFF0C;&#x518D;&#x5C1D;&#x8BD5; dirty
+<img src="https://zia-wiki.oss-cn-hangzhou.aliyuncs.com/19-3-26/16785228.jpg" alt=""></li>
+<li>read &#x548C; dirty &#x5728;&#x4E00;&#x5B9A;&#x6761;&#x4EF6;&#x4E0B;&#x4F1A;&#x4E92;&#x8F6C;<ul>
+<li>read -&gt; dirty&#xFF1A;&#x6709;&#x65B0;&#x7684;&#x952E;&#x503C;&#x5BF9;&#x5B58;&#x5165;&#xFF08;Store &#x548C; LoadOrStore&#xFF09;&#xFF0C;&#x8F6C;&#x6362;&#x65F6;&#x4F1A;&#x5C06; read &#x4E2D; nil &#x7684;&#x952E;&#x903B;&#x8F91;&#x5220;&#x9664;</li>
+<li>dirty -&gt; read&#xFF1A;misses &#x8FBE;&#x5230; dirty &#x7684;&#x957F;&#x5EA6;&#xFF0C;&#x8868;&#x660E;&#x4ECE; dirty &#x67E5;&#x8BE2;&#x7684;&#x6B21;&#x6570;&#x8DB3;&#x591F;&#x591A;&#xFF08;Load &#x548C; LoadOrStore&#xFF09;</li>
+</ul>
+</li>
+</ul>
 
                                 
                                 </section>
@@ -704,7 +724,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"sync包","level":"1.5.3","depth":2,"next":{"title":"大数据","level":"1.6","depth":1,"path":"bigdata/README.md","ref":"bigdata/README.md","articles":[{"title":"Hadoop","level":"1.6.1","depth":2,"path":"bigdata/hadoop.md","ref":"bigdata/hadoop.md","articles":[]},{"title":"HBase","level":"1.6.2","depth":2,"path":"bigdata/hbase.md","ref":"bigdata/hbase.md","articles":[]},{"title":"Spark","level":"1.6.3","depth":2,"path":"bigdata/spark.md","ref":"bigdata/spark.md","articles":[]},{"title":"Zookeeper","level":"1.6.4","depth":2,"path":"bigdata/zookeeper.md","ref":"bigdata/zookeeper.md","articles":[]}]},"previous":{"title":"调度器","level":"1.5.2","depth":2,"path":"go/scheduler.md","ref":"go/scheduler.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"go/sync.md","mtime":"2019-03-24T03:56:08.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-24T03:58:13.105Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"sync包","level":"1.5.3","depth":2,"next":{"title":"大数据","level":"1.6","depth":1,"path":"bigdata/README.md","ref":"bigdata/README.md","articles":[{"title":"Hadoop","level":"1.6.1","depth":2,"path":"bigdata/hadoop.md","ref":"bigdata/hadoop.md","articles":[]},{"title":"HBase","level":"1.6.2","depth":2,"path":"bigdata/hbase.md","ref":"bigdata/hbase.md","articles":[]},{"title":"Spark","level":"1.6.3","depth":2,"path":"bigdata/spark.md","ref":"bigdata/spark.md","articles":[]},{"title":"Zookeeper","level":"1.6.4","depth":2,"path":"bigdata/zookeeper.md","ref":"bigdata/zookeeper.md","articles":[]}]},"previous":{"title":"调度器","level":"1.5.2","depth":2,"path":"go/scheduler.md","ref":"go/scheduler.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"go/sync.md","mtime":"2019-03-26T02:24:45.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-27T03:43:20.594Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
