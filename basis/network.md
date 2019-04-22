@@ -1,18 +1,19 @@
 # 计算机网络
-## HTTP 状态码
+## HTTP
+### HTTP 状态码
 - 1xx：信息，服务器收到请求，需要请求者继续执行操作
 - 2xx：成功，操作被成功接收并处理
 - 3xx：重定向，需要进一步的操作以完成请求
 - 4xx：客户端错误，请求包含语法错误或无法完成请求
 - 5xx：服务器错误，服务器在处理请求的过程中发生了错误
 
-## HTTP 1.1 新特性
+### HTTP 1.1 新特性
 - 断点续传
   - 请求头：Range: bytes=0-499
   - 响应头：Content-Range: bytes 0-499/22400，并使用 HTTP/1.1 206 Partial Content
 - 默认长连接：Connection: keep-alive
 
-## HTTPS 通信过程
+### HTTPS 通信过程
 ![](http://zia-wiki.oss-cn-hangzhou.aliyuncs.com/18-11-3/4710422.jpg)
 
 ## OAuth 2.0 授权过程

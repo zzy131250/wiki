@@ -60,7 +60,7 @@
     <link rel="next" href="scheduler.html" />
     
     
-    <link rel="prev" href="README.md" />
+    <link rel="prev" href="basis.html" />
     
 
     </head>
@@ -407,7 +407,20 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.5.1" data-path="channel.html">
+        <li class="chapter " data-level="1.5.1" data-path="basis.html">
+            
+                <a href="basis.html">
+            
+                    
+                    基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5.2" data-path="channel.html">
             
                 <a href="channel.html">
             
@@ -420,7 +433,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.2" data-path="scheduler.html">
+        <li class="chapter " data-level="1.5.3" data-path="scheduler.html">
             
                 <a href="scheduler.html">
             
@@ -433,7 +446,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.3" data-path="sync.html">
+        <li class="chapter " data-level="1.5.4" data-path="sync.html">
             
                 <a href="sync.html">
             
@@ -619,12 +632,41 @@
 <li>&#x53D1;&#x9001; channel&#xFF1A;make(chan&lt;- int)</li>
 <li>&#x63A5;&#x6536; channel&#xFF1A;make(&lt;-chan int)</li>
 </ul>
-<h2 id="channel-&#x5173;&#x95ED;&#x540E;&#x503C;&#x7684;&#x8BFB;&#x53D6;">channel &#x5173;&#x95ED;&#x540E;&#x503C;&#x7684;&#x8BFB;&#x53D6;</h2>
-<ul>
-<li>&#x65E0;&#x7F13;&#x5B58; channel&#xFF1A;channel &#x5173;&#x95ED;&#x540E;&#xFF0C;&#x63A5;&#x6536;&#x7684;&#x503C;&#x4E3A;&#x8BE5; channel &#x503C;&#x7C7B;&#x578B;&#x7684;&#x96F6;&#x503C;</li>
-<li>&#x6709;&#x7F13;&#x5B58; channel&#xFF1A;channel &#x5173;&#x95ED;&#x540E;&#xFF0C;&#x5148;&#x5C06;&#x7F13;&#x5B58;&#x6570;&#x636E;&#x8BFB;&#x5B8C;&#xFF0C;&#x800C;&#x540E;&#x90FD;&#x8FD4;&#x56DE; channel &#x503C;&#x7C7B;&#x578B;&#x7684;&#x96F6;&#x503C;</li>
-<li>range &#x8BED;&#x53E5;&#xFF1A;&#x5FC5;&#x987B;&#x5728; channel &#x5173;&#x95ED;&#x540E;&#x518D;&#x5F00;&#x59CB;&#x8BFB;&#x53D6;&#xFF0C;&#x5426;&#x5219;&#x4F1A;&#x51FA;&#x73B0;&#x6B7B;&#x9501;</li>
-</ul>
+<h2 id="channel-&#x503C;&#x7684;&#x8BFB;&#x5199;">channel &#x503C;&#x7684;&#x8BFB;&#x5199;</h2>
+<table>
+<thead>
+<tr>
+<th>channel &#x7C7B;&#x578B;</th>
+<th>&#x8BFB;&#x53D6;</th>
+<th>&#x5199;&#x5165;</th>
+<th>&#x5173;&#x95ED;&#x540E;&#x8BFB;&#x53D6;</th>
+<th>&#x5173;&#x95ED;&#x540E;&#x5199;&#x5165;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&#x65E0;&#x7F13;&#x5B58; channel</td>
+<td>&#x963B;&#x585E;&#x76F4;&#x5230;&#x6709;&#x6570;&#x636E;&#x5199;&#x5165;</td>
+<td>&#x963B;&#x585E;&#x76F4;&#x5230;&#x6709;&#x63A5;&#x6536;&#x8005;&#x8BFB;&#x53D6;</td>
+<td>&#x8FD4;&#x56DE; channel &#x503C;&#x7C7B;&#x578B;&#x7684;&#x96F6;&#x503C;</td>
+<td>&#x5F15;&#x53D1;panic</td>
+</tr>
+<tr>
+<td>&#x6709;&#x7F13;&#x5B58; channel</td>
+<td>&#x5982;&#x679C;&#x6709;&#x7F13;&#x5B58;&#x6570;&#x636E;&#xFF0C;&#x5219;&#x76F4;&#x63A5;&#x8BFB;&#x53D6;&#xFF0C;&#x5426;&#x5219;&#x963B;&#x585E;&#x76F4;&#x5230;&#x6709;&#x6570;&#x636E;&#x5199;&#x5165;</td>
+<td>&#x5982;&#x679C;&#x672A;&#x6EE1;&#xFF0C;&#x5219;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x5199;&#x5165;&#xFF0C;&#x5426;&#x5219;&#x963B;&#x585E;&#x76F4;&#x5230;&#x6709;&#x63A5;&#x6536;&#x8005;&#x8BFB;&#x53D6;</td>
+<td>&#x5148;&#x5C06;&#x7F13;&#x5B58;&#x6570;&#x636E;&#x8BFB;&#x5B8C;&#xFF0C;&#x800C;&#x540E;&#x90FD;&#x8FD4;&#x56DE; channel &#x503C;&#x7C7B;&#x578B;&#x7684;&#x96F6;&#x503C;</td>
+<td>&#x5F15;&#x53D1; panic</td>
+</tr>
+<tr>
+<td>nil channel</td>
+<td>&#x963B;&#x585E;</td>
+<td>&#x963B;&#x585E;</td>
+<td>&#x5173;&#x95ED;&#x65F6;&#x5F15;&#x53D1; panic</td>
+<td>&#x5173;&#x95ED;&#x65F6;&#x5F15;&#x53D1; panic</td>
+</tr>
+</tbody>
+</table>
 
                                 
                                 </section>
@@ -652,7 +694,7 @@
 
             
                 
-                <a href="README.md" class="navigation navigation-prev " aria-label="Previous page: Go">
+                <a href="basis.html" class="navigation navigation-prev " aria-label="Previous page: 基础">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
@@ -668,7 +710,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Channel","level":"1.5.1","depth":2,"next":{"title":"调度器","level":"1.5.2","depth":2,"path":"go/scheduler.md","ref":"go/scheduler.md","articles":[]},"previous":{"title":"Go","level":"1.5","depth":1,"path":"go/README.md","ref":"go/README.md","articles":[{"title":"Channel","level":"1.5.1","depth":2,"path":"go/channel.md","ref":"go/channel.md","articles":[]},{"title":"调度器","level":"1.5.2","depth":2,"path":"go/scheduler.md","ref":"go/scheduler.md","articles":[]},{"title":"sync包","level":"1.5.3","depth":2,"path":"go/sync.md","ref":"go/sync.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"go/channel.md","mtime":"2019-03-20T08:19:48.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-27T03:43:20.594Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Channel","level":"1.5.2","depth":2,"next":{"title":"调度器","level":"1.5.3","depth":2,"path":"go/scheduler.md","ref":"go/scheduler.md","articles":[]},"previous":{"title":"基础","level":"1.5.1","depth":2,"path":"go/basis.md","ref":"go/basis.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"go/channel.md","mtime":"2019-04-22T07:46:18.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-22T08:21:00.431Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
