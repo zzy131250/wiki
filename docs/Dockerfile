@@ -1,4 +1,4 @@
-FROM node:6.11.4
+FROM node:6.11.4-alpine
 
 RUN npm install gitbook-cli -g
 
