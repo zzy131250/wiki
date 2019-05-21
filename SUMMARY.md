@@ -26,6 +26,7 @@
     * [基础](go/basis.md)
     * [Channel](go/channel.md)
     * [调度器](go/scheduler.md)
+    * [内存管理](go/memory.md)
     * [sync包](go/sync.md)
 * [大数据](bigdata/README.md)
     * [Hadoop](bigdata/hadoop.md)

@@ -1,4 +1,5 @@
 # Sync 包
+基于 go 1.11.1
 ## 读写锁 sync.RWMutex
 ### race 竞态检测
 - 把 race 检测转换成 happens-before 的检测

@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Zookeeper · GitBook</title>
+        <title>内存管理 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../cloud/" />
+    <link rel="next" href="sync.html" />
     
     
-    <link rel="prev" href="spark.html" />
+    <link rel="prev" href="scheduler.html" />
     
 
     </head>
@@ -393,7 +393,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5" data-path="../go/README.md">
+        <li class="chapter " data-level="1.5" data-path="README.md">
             
                 <span>
             
@@ -407,9 +407,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.5.1" data-path="../go/basis.html">
+        <li class="chapter " data-level="1.5.1" data-path="basis.html">
             
-                <a href="../go/basis.html">
+                <a href="basis.html">
             
                     
                     基础
@@ -420,9 +420,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.2" data-path="../go/channel.html">
+        <li class="chapter " data-level="1.5.2" data-path="channel.html">
             
-                <a href="../go/channel.html">
+                <a href="channel.html">
             
                     
                     Channel
@@ -433,9 +433,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.3" data-path="../go/scheduler.html">
+        <li class="chapter " data-level="1.5.3" data-path="scheduler.html">
             
-                <a href="../go/scheduler.html">
+                <a href="scheduler.html">
             
                     
                     调度器
@@ -446,9 +446,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.4" data-path="../go/memory.html">
+        <li class="chapter active" data-level="1.5.4" data-path="memory.html">
             
-                <a href="../go/memory.html">
+                <a href="memory.html">
             
                     
                     内存管理
@@ -459,9 +459,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.5" data-path="../go/sync.html">
+        <li class="chapter " data-level="1.5.5" data-path="sync.html">
             
-                <a href="../go/sync.html">
+                <a href="sync.html">
             
                     
                     sync包
@@ -477,9 +477,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6" data-path="./">
+        <li class="chapter " data-level="1.6" data-path="../bigdata/">
             
-                <a href="./">
+                <a href="../bigdata/">
             
                     
                     大数据
@@ -491,9 +491,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.6.1" data-path="hadoop.html">
+        <li class="chapter " data-level="1.6.1" data-path="../bigdata/hadoop.html">
             
-                <a href="hadoop.html">
+                <a href="../bigdata/hadoop.html">
             
                     
                     Hadoop
@@ -504,9 +504,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.2" data-path="hbase.html">
+        <li class="chapter " data-level="1.6.2" data-path="../bigdata/hbase.html">
             
-                <a href="hbase.html">
+                <a href="../bigdata/hbase.html">
             
                     
                     HBase
@@ -517,9 +517,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.3" data-path="spark.html">
+        <li class="chapter " data-level="1.6.3" data-path="../bigdata/spark.html">
             
-                <a href="spark.html">
+                <a href="../bigdata/spark.html">
             
                     
                     Spark
@@ -530,9 +530,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.6.4" data-path="zookeeper.html">
+        <li class="chapter " data-level="1.6.4" data-path="../bigdata/zookeeper.html">
             
-                <a href="zookeeper.html">
+                <a href="../bigdata/zookeeper.html">
             
                     
                     Zookeeper
@@ -623,7 +623,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Zookeeper</a>
+        <a href=".." >内存管理</a>
     </h1>
 </div>
 
@@ -638,28 +638,104 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="zookeeper">Zookeeper</h1>
-<h2 id="zab-&#x534F;&#x8BAE;&#xFF08;zookeeper-&#x539F;&#x5B50;&#x5E7F;&#x64AD;&#x534F;&#x8BAE;&#xFF09;">Zab &#x534F;&#x8BAE;&#xFF08;Zookeeper &#x539F;&#x5B50;&#x5E7F;&#x64AD;&#x534F;&#x8BAE;&#xFF09;</h2>
-<h3 id="fast-leader-&#x9009;&#x4E3E;">Fast Leader &#x9009;&#x4E3E;</h3>
+                                <h1 id="&#x5185;&#x5B58;&#x7BA1;&#x7406;">&#x5185;&#x5B58;&#x7BA1;&#x7406;</h1>
+<p>&#x57FA;&#x4E8E; go 1.12.3</p>
+<h2 id="&#x7279;&#x70B9;">&#x7279;&#x70B9;</h2>
 <ul>
-<li>&#x6BCF;&#x4E00;&#x8F6E;&#x9009;&#x4E3E;&#x90FD;&#x6709; epoch&#xFF0C;&#x503C;&#x8D8A;&#x5927;&#x8868;&#x793A;&#x8D8A;&#x65B0;</li>
-<li>&#x6BCF;&#x6761;&#x6570;&#x636E;&#x683C;&#x5F0F;&#x4E3A;(myid, zxid)&#xFF0C;&#x5148;&#x6BD4;&#x8F83; zxid&#xFF0C;&#x82E5;&#x76F8;&#x540C;&#x518D;&#x6BD4;&#x8F83; myid&#xFF0C;&#x8F83;&#x5927;&#x8005;&#x80DC;&#x51FA;<ul>
-<li>zxid &#x4E3A;64&#x4F4D;&#x6570;&#x5B57;&#xFF0C;&#x4F4E;32&#x4F4D;&#x8868;&#x793A;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x4E8B;&#x52A1;&#x7F16;&#x53F7;&#xFF0C;&#x9AD8;32&#x4F4D;&#x8868;&#x793A; epoch</li>
+<li>&#x5185;&#x5B58;&#x6C60;&#xFF1A;&#x5411;&#x7CFB;&#x7EDF;&#x7533;&#x8BF7;&#x5927;&#x5757;&#x5185;&#x5B58;&#xFF0C;&#x7136;&#x540E;&#x8FDB;&#x884C;&#x5206;&#x914D;&#x548C;&#x7BA1;&#x7406;</li>
+<li>&#x5783;&#x573E;&#x56DE;&#x6536;</li>
+<li>&#x5927;&#x5C0F;&#x5207;&#x5206;&#xFF1A;&#x5C06;&#x5BF9;&#x8C61;&#x5206;&#x4E3A; 67 &#x7C7B;&#xFF0C;&#x5927;&#x5BF9;&#x8C61;&#x4EE5;&#x9875;&#x5206;&#x914D;&#xFF0C;&#x5C0F;&#x5BF9;&#x8C61;&#x4EE5;&#x5757;&#x5206;&#x914D;&#xFF0C;&#x63D0;&#x9AD8;&#x5185;&#x5B58;&#x4F7F;&#x7528;&#x7387;&#xFF0C;&#x51CF;&#x5C11;&#x5185;&#x5B58;&#x788E;&#x7247;</li>
+<li>&#x591A;&#x7EBF;&#x7A0B;&#x7BA1;&#x7406;&#xFF1A;&#x6BCF;&#x4E2A; P &#x6709;&#x4E00;&#x4E2A; cache&#xFF0C;&#x7F13;&#x5B58;&#x7533;&#x8BF7;&#x7684; span</li>
+</ul>
+<h2 id="&#x5185;&#x5B58;&#x6982;&#x89C8;">&#x5185;&#x5B58;&#x6982;&#x89C8;</h2>
+<ul>
+<li>&#x4EE5;64&#x4F4D;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x4E3A;&#x4F8B;&#xFF0C;&#x5185;&#x5B58;&#x5212;&#x5206;&#x4E3A; spans&#x3001;bitmap&#x3001;arena &#x4E09;&#x4E2A;&#x90E8;&#x5206;&#x3002;&#x5176;&#x4E2D; spans &#x548C; bitmap &#x662F;&#x4E3A;&#x4E86;&#x7BA1;&#x7406; arena &#x533A;&#x800C;&#x5B58;&#x5728;&#x7684;</li>
+</ul>
+<p><img src="https://zia-wiki.oss-cn-hangzhou.aliyuncs.com/19-5-15/82582990.jpg" alt=""></p>
+<ul>
+<li>arena &#x4E3A; 512G&#xFF0C;&#x5212;&#x5206;&#x4E3A;&#x4E00;&#x4E2A;&#x4E2A; 8KB &#x7684; page</li>
+<li>spans &#x5B58;&#x653E; span &#x7684;&#x6307;&#x9488;&#xFF0C;&#x6BCF;&#x4E2A;&#x6307;&#x9488;&#x6307;&#x5411;&#x4E00;&#x4E2A; page&#xFF0C;&#x6545; spans &#x533A;&#x5927;&#x5C0F;&#x4E3A; (512G/8KB)*8byte = 512M</li>
+<li>bitmap &#x533A;&#x57DF;&#x4E5F;&#x901A;&#x8FC7; arena &#x533A;&#x57DF;&#x8BA1;&#x7B97;&#xFF0C;&#x4E3B;&#x8981;&#x7528;&#x4E8E; GC&#xFF0C;&#x6BCF;&#x4E2A; slot &#x7528;2&#x4E2A; bit &#x8868;&#x793A;&#xFF0C;&#x5206;&#x522B;&#x8868;&#x793A;&#x662F;&#x5426;&#x88AB;&#x6807;&#x8BB0;&#xFF08;&#x662F;&#x5426;&#x9700;&#x8981;&#x7EE7;&#x7EED;&#x626B;&#x63CF;&#xFF09;&#x4EE5;&#x53CA;&#x662F;&#x5426;&#x662F;&#x6307;&#x9488;</li>
+</ul>
+<p><img src="https://zia-wiki.oss-cn-hangzhou.aliyuncs.com/19-5-19/89946161.jpg" alt=""></p>
+<h2 id="&#x5185;&#x5B58;&#x6570;&#x636E;&#x7ED3;&#x6784;">&#x5185;&#x5B58;&#x6570;&#x636E;&#x7ED3;&#x6784;</h2>
+<h3 id="class">class</h3>
+<ul>
+<li>&#x6839;&#x636E;&#x5BF9;&#x8C61;&#x5927;&#x5C0F;&#x5212;&#x5206;&#x4E00;&#x7CFB;&#x5217; class&#xFF0C;&#x4E00;&#x4E2A; class &#x4EE3;&#x8868;&#x4E00;&#x79CD;&#x56FA;&#x5B9A;&#x5927;&#x5C0F;&#x7684;&#x5BF9;&#x8C61;&#x3002;&#x4E00;&#x5171;&#x5212;&#x5206;&#x4E86; 66 &#x7C7B;&#xFF08;&#x7B2C; 1 &#x7C7B; 8byte~&#x7B2C; 66 &#x7C7B; 32768byte&#xFF09;</li>
+<li>&#x5BF9;&#x4E8E;&#x6BCF;&#x79CD; class&#xFF0C;&#x90FD;&#x6709;&#x56FA;&#x5B9A;&#x7684; span &#x5927;&#x5C0F;&#xFF0C;&#x4EE5;&#x53CA;&#x6BCF;&#x4E2A; span &#x53EF;&#x4EE5;&#x5B58;&#x653E;&#x7684;&#x5BF9;&#x8C61;&#x6570;&#x76EE;</li>
+<li>&#x5BF9;&#x4E8E;&#x8D85;&#x8FC7; 32K &#x7684;&#x5927;&#x5BF9;&#x8C61;&#xFF0C;&#x5176; class ID &#x4E3A;0&#xFF0C;&#x6BCF;&#x4E2A; class &#x53EA;&#x5305;&#x542B;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;</li>
+</ul>
+<h3 id="span">span</h3>
+<ul>
+<li>&#x5185;&#x5B58;&#x7BA1;&#x7406;&#x7684;&#x57FA;&#x672C;&#x5355;&#x4F4D;&#xFF0C;&#x4E00;&#x4E2A; span &#x7BA1;&#x7406;&#x4E00;&#x7C7B; class &#x5BF9;&#x8C61;</li>
+<li>&#x6839;&#x636E;&#x5BF9;&#x8C61;&#x5927;&#x5C0F;&#xFF0C; span &#x5C06;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x9875;&#x62C6;&#x5206;&#x6210;&#x5757;&#x8FDB;&#x884C;&#x7BA1;&#x7406;&#xFF0C;&#x6BCF;&#x4E2A;&#x5757;&#x7684;&#x5927;&#x5C0F;&#x5373;&#x8BE5;&#x7C7B;&#x5BF9;&#x8C61;&#x7684;&#x5927;&#x5C0F;</li>
+</ul>
+<h3 id="central">central</h3>
+<ul>
+<li>&#x7BA1;&#x7406; span &#x7684;&#x5168;&#x5C40;&#x8D44;&#x6E90;&#xFF0C;&#x6BCF;&#x4E2A; central &#x7BA1;&#x7406;&#x5B58;&#x50A8;&#x540C;&#x4E00;&#x7C7B; class &#x7684; span &#x5217;&#x8868;</li>
+</ul>
+<h3 id="cache&#xFF08;&#x53C2;&#x8003;-tcmalloc&#xFF09;">cache&#xFF08;&#x53C2;&#x8003; tcmalloc&#xFF09;</h3>
+<ul>
+<li>&#x7F13;&#x5B58;&#x4ECE; central &#x7533;&#x8BF7;&#x7684; span</li>
+<li>&#x4FDD;&#x5B58;&#x4E00;&#x4E2A; 67*2 &#x7684;&#x6570;&#x7EC4;&#xFF0C;&#x6BCF;&#x4E2A;&#x6570;&#x7EC4;&#x5143;&#x7D20;&#x4E3A;&#x4E00;&#x7C7B; span &#x7684;&#x5217;&#x8868;&#x5934;</li>
+<li>&#x5BF9;&#x4E8E;&#x6BCF;&#x4E2A; class&#xFF0C;&#x90FD;&#x6709; scan &#x548C; noscan &#x4E24;&#x4E2A; span &#x5217;&#x8868;&#xFF0C;&#x5206;&#x522B;&#x4FDD;&#x5B58;&#x542B;&#x6709;&#x6307;&#x9488;&#x7684;&#x5BF9;&#x8C61;&#x548C;&#x6CA1;&#x6709;&#x6307;&#x9488;&#x7684;&#x5BF9;&#x8C61;&#x3002;noscan &#x5217;&#x8868;&#x8868;&#x793A;&#x5176;&#x4E2D;&#x4FDD;&#x5B58;&#x7684;&#x662F;&#x6CA1;&#x6709;&#x6307;&#x9488;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x65E0;&#x9700;&#x8FDB;&#x884C; GC &#x626B;&#x63CF;&#xFF08;mark &#x9636;&#x6BB5;&#x65E0;&#x9700;&#x7EE7;&#x7EED;&#x904D;&#x5386;&#xFF09;</li>
+</ul>
+<h3 id="heap">heap</h3>
+<ul>
+<li>&#x5B58;&#x653E; central &#x5217;&#x8868;&#xFF0C;&#x662F; 67*2 &#x7684;&#x6570;&#x7EC4;</li>
+<li>&#x5B58;&#x653E; spans&#x3001;bitmap &#x4EE5;&#x53CA; arena</li>
+</ul>
+<h2 id="&#x5185;&#x5B58;&#x5206;&#x914D;">&#x5185;&#x5B58;&#x5206;&#x914D;</h2>
+<ol>
+<li>object size &gt; 32K&#xFF0C;&#x4F7F;&#x7528; heap &#x76F4;&#x63A5;&#x5206;&#x914D;</li>
+<li>object size &lt; 16byte&#xFF08;&#x53EF;&#x8C03;&#x8282;&#xFF0C;&#x76EE;&#x524D;&#x6765;&#x8BF4;&#x662F;&#x6700;&#x597D;&#x7684;&#xFF0C;&#x6700;&#x591A;&#x4E3A; 2x &#x7684;&#x6D6A;&#x8D39;&#x3002;&#x5982;&#x679C;&#x662F; 8byte&#xFF0C;&#x56FA;&#x7136;&#x53EF;&#x4EE5;&#x505A;&#x5230;&#x4E0D;&#x6D6A;&#x8D39;&#xFF0C;&#x4F46;&#x4E0D;&#x80FD;&#x505A;&#x5BF9;&#x8C61;&#x5408;&#x5E76;&#xFF1B;&#x5982;&#x679C;&#x662F; 32byte&#xFF0C;&#x5408;&#x5E76;&#x7684;&#x673A;&#x4F1A;&#x591A;&#xFF0C;&#x4F46;&#x4F1A;&#x6709; 4x &#x7684;&#x6D6A;&#x8D39;&#x3002;&#x89C1; runtime/malloc.go::mallocgc &#x5173;&#x4E8E; tiny allocator &#x7684;&#x4ECB;&#x7ECD;&#xFF09;&#x4E14;&#x4E3A; noscan &#x5BF9;&#x8C61;&#xFF0C;&#x4F7F;&#x7528; cache &#x7684; tiny &#x5206;&#x914D;&#x5668;&#x5206;&#x914D;&#xFF08;tiny &#x662F; cache &#x4E2D;&#x4E13;&#x95E8;&#x5B58;&#x653E;&#x5C0F;&#x5BF9;&#x8C61;&#x7684;&#x533A;&#x57DF;&#xFF09;&#xFF1B;&#x82E5;&#x5BF9;&#x8C61;&#x5305;&#x542B;&#x6307;&#x9488;&#xFF0C;&#x5219;&#x540C; 3</li>
+<li>object size &#x4ECB;&#x4E8E; 16byte &#x548C; 32K &#x4E4B;&#x95F4;&#xFF0C;&#x5148;&#x4F7F;&#x7528; cache &#x5BF9;&#x8C61;&#x7684; class span &#x5206;&#x914D;&#xFF1B;cache class &#x5BF9;&#x5E94;&#x7684; span &#x6CA1;&#x6709;&#x53EF;&#x7528;&#x5757;&#x65F6;&#xFF0C;&#x5411; central &#x7533;&#x8BF7;&#xFF1B;central &#x6CA1;&#x6709;&#x53EF;&#x7528;&#x7684; span &#x65F6;&#xFF0C;&#x5411; heap &#x7533;&#x8BF7;&#xFF1B;heap &#x6CA1;&#x6709;&#x53EF;&#x7528;&#x7684; span &#x65F6;&#xFF0C;&#x5411;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x7533;&#x8BF7;</li>
+</ol>
+<h2 id="gc">GC</h2>
+<h3 id="&#x89E6;&#x53D1;&#x6761;&#x4EF6;">&#x89E6;&#x53D1;&#x6761;&#x4EF6;</h3>
+<ul>
+<li>gcTriggerAlways&#xFF1A;&#x5F3A;&#x5236;&#x89E6;&#x53D1; GC</li>
+<li>gcTriggerHeap&#xFF1A;&#x5F53;&#x524D;&#x5206;&#x914D;&#x7684;&#x5185;&#x5B58;&#x8FBE;&#x5230;&#x4E00;&#x5B9A;&#x503C;&#x5C31;&#x89E6;&#x53D1; GC</li>
+<li>gcTriggerTime&#xFF1A;&#x5F53;&#x4E00;&#x5B9A;&#x65F6;&#x95F4;&#x6CA1;&#x6709;&#x6267;&#x884C;&#x8FC7; GC &#x5C31;&#x89E6;&#x53D1; GC</li>
+<li>gcTriggerCycle&#xFF1A;&#x8981;&#x6C42;&#x542F;&#x52A8;&#x65B0;&#x4E00;&#x8F6E;&#x7684; GC&#xFF0C;&#x5DF2;&#x542F;&#x52A8;&#x5219;&#x8DF3;&#x8FC7;&#xFF0C;&#x624B;&#x52A8;&#x89E6;&#x53D1; GC &#x7684; runtime.GC &#x4F1A;&#x4F7F;&#x7528;&#x8FD9;&#x4E2A;&#x6761;&#x4EF6;</li>
+</ul>
+<h3 id="&#x4E09;&#x8272;&#x6807;&#x8BB0;&#x7B97;&#x6CD5;">&#x4E09;&#x8272;&#x6807;&#x8BB0;&#x7B97;&#x6CD5;</h3>
+<ol>
+<li>&#x6700;&#x5F00;&#x59CB;&#x6240;&#x6709;&#x5BF9;&#x8C61;&#x90FD;&#x662F;&#x767D;&#x8272;</li>
+<li>&#x4ECE; root &#x5F00;&#x59CB;&#x627E;&#x5230;&#x6240;&#x6709;&#x53EF;&#x8FBE;&#x5BF9;&#x8C61;&#xFF0C;&#x6807;&#x8BB0;&#x4E3A;&#x7070;&#x8272;&#xFF0C;&#x653E;&#x5165;&#x5F85;&#x5904;&#x7406;&#x961F;&#x5217;</li>
+<li>&#x904D;&#x5386;&#x7070;&#x8272;&#x5BF9;&#x8C61;&#x961F;&#x5217;&#xFF0C;&#x5C06;&#x5176;&#x5F15;&#x7528;&#x5BF9;&#x8C61;&#x6807;&#x8BB0;&#x4E3A;&#x7070;&#x8272;&#x653E;&#x5165;&#x5F85;&#x5904;&#x7406;&#x961F;&#x5217;&#xFF0C;&#x81EA;&#x8EAB;&#x6807;&#x8BB0;&#x4E3A;&#x9ED1;&#x8272;</li>
+<li>&#x5904;&#x7406;&#x5B8C;&#x7070;&#x8272;&#x5BF9;&#x8C61;&#x961F;&#x5217;&#xFF0C;&#x6267;&#x884C;&#x6E05;&#x626B;&#x5DE5;&#x4F5C;&#xFF0C;&#x5373;&#x6E05;&#x7406;&#x767D;&#x8272;&#x5BF9;&#x8C61;</li>
+</ol>
+<h3 id="&#x5177;&#x4F53;&#x8FC7;&#x7A0B;">&#x5177;&#x4F53;&#x8FC7;&#x7A0B;</h3>
+<h4 id="sweep-termination">sweep termination</h4>
+<ul>
+<li>runtime/mgc.go::gcStart -&gt;</li>
+<li>runtime/mgc.go::gcBgMarkStartWorkers -&gt;</li>
+<li>runtime/mgc.go::gcBgMarkWorker</li>
+</ul>
+<h4 id="mark">mark</h4>
+<ul>
+<li>runtime/mgcmark.go::gcDrain<ul>
+<li>&#x7070;&#x8272;&#x5BF9;&#x8C61;&#x88AB;&#x6807;&#x8BB0;&#x8FC7;&#x4E14;&#x5728; work &#x5217;&#x8868;&#x4E2D;&#xFF0C;&#x9ED1;&#x8272;&#x5BF9;&#x8C61;&#x88AB;&#x6807;&#x8BB0;&#x8FC7;&#x4E14;&#x4E0D;&#x5728; work &#x5217;&#x8868;&#x4E2D;</li>
+<li>&#x7070;&#x8272;&#x5BF9;&#x8C61;&#x5B58;&#x50A8;&#x4E8E; p.gcw &#x4E2D;&#xFF0C;&#x5B83;&#x662F; gcWork &#x7ED3;&#x6784;&#x4F53;&#xFF08;&#x5176;&#x4E2D;&#x5B58;&#x50A8;&#x4E86;&#x4E24;&#x4E2A; work buffer &#x7684;&#x7070;&#x8272;&#x5BF9;&#x8C61;&#xFF0C;&#x8BBE;&#x7F6E;&#x4E24;&#x4E2A; buffer &#x7684;&#x76EE;&#x7684;&#x5728;&#x4E8E;&#x5206;&#x644A;&#x5728;&#x5168;&#x5C40; work &#x4E0A; get/put buffer &#x7684;&#x6210;&#x672C;&#xFF0C;&#x51CF;&#x5C11;&#x5168;&#x5C40; work &#x7684;&#x4E89;&#x7528;&#xFF09;<ul>
+<li>&#x5168;&#x5C40; work &#x4E2D;&#x6709;&#x4E24;&#x4E2A;&#x5217;&#x8868;&#xFF0C;&#x5206;&#x522B;&#x4E3A; full &#x548C; empty &#x7684; work buffer&#xFF0C;&#x4E14;&#x8FD9;&#x4E24;&#x4E2A;&#x5217;&#x8868;&#x90FD;&#x662F;&#x65E0;&#x9501;&#x7684;&#xFF0C;&#x901A;&#x8FC7; cas &#x64CD;&#x4F5C;</li>
 </ul>
 </li>
-<li>&#x5982;&#x679C;&#x67D0;&#x8282;&#x70B9;&#x5F97;&#x5230;&#x4E86;&#x8D85;&#x8FC7;&#x534A;&#x6570;&#x7684;&#x6295;&#x7968;&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x5F53;&#x9009;&#x4E3A; leader</li>
-</ul>
-<h3 id="&#x6062;&#x590D;&#x9636;&#x6BB5;">&#x6062;&#x590D;&#x9636;&#x6BB5;</h3>
-<ul>
-<li>follower &#x53D1;&#x9001; lastZxid &#x7ED9; leader</li>
-<li>leader &#x6839;&#x636E;&#x81EA;&#x5DF1;&#x7684; lastZxid &#x4E0E; follower &#x7684; lastZxid &#x51B3;&#x5B9A;&#x540C;&#x6B65;&#x8FC7;&#x7A0B;<ul>
-<li>&#x5982;&#x679C; leader &#x7684;&#x6570;&#x636E;&#x66F4;&#x65B0;&#xFF0C;&#x90A3;&#x4E48;&#x53D1;&#x9001;&#x5269;&#x4F59;&#x6570;&#x636E;&#x7ED9; follower &#x5E76;&#x8981;&#x6C42;&#x5176; commit</li>
-<li>&#x5982;&#x679C; follower &#x7684;&#x6570;&#x636E;&#x66F4;&#x65B0;&#xFF0C;&#x90A3;&#x4E48;&#x8981;&#x6C42; follower &#x629B;&#x5F03;&#x65B0;&#x6570;&#x636E;&#xFF08;&#x672A;&#x88AB; commit&#xFF09;&#x76F4;&#x5230;&#x4E0E; leader &#x4FDD;&#x6301;&#x4E00;&#x81F4;</li>
 </ul>
 </li>
 </ul>
-<h3 id="&#x6D88;&#x606F;&#x5E7F;&#x64AD;&#xFF08;&#x7C7B;&#x4F3C;&#x4E8E;&#x4E24;&#x9636;&#x6BB5;&#x63D0;&#x4EA4;&#xFF09;">&#x6D88;&#x606F;&#x5E7F;&#x64AD;&#xFF08;&#x7C7B;&#x4F3C;&#x4E8E;&#x4E24;&#x9636;&#x6BB5;&#x63D0;&#x4EA4;&#xFF09;</h3>
-<p><img src="http://zia-wiki.oss-cn-hangzhou.aliyuncs.com/18-11-3/37606863.jpg" alt=""></p>
+<h4 id="mark-termination">mark termination</h4>
+<ul>
+<li>runtime/mgc.go::gcMarkDone -&gt;</li>
+<li>runtime/mgc.go::gcMarkTermination -&gt;</li>
+<li>runtime/mgc.go::gcMark</li>
+</ul>
+<h4 id="sweep">sweep</h4>
+<ul>
+<li>runtime/mgc.go::gcSweep -&gt;</li>
+<li>runtime/mgcsweep::sweepone -&gt;</li>
+<li>runtime/mgcsweep::sweep</li>
+</ul>
 
                                 
                                 </section>
@@ -687,12 +763,12 @@
 
             
                 
-                <a href="spark.html" class="navigation navigation-prev " aria-label="Previous page: Spark">
+                <a href="scheduler.html" class="navigation navigation-prev " aria-label="Previous page: 调度器">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="../cloud/" class="navigation navigation-next " aria-label="Next page: 云计算">
+                <a href="sync.html" class="navigation navigation-next " aria-label="Next page: sync包">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -703,7 +779,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Zookeeper","level":"1.6.4","depth":2,"next":{"title":"云计算","level":"1.7","depth":1,"path":"cloud/README.md","ref":"cloud/README.md","articles":[{"title":"Docker","level":"1.7.1","depth":2,"path":"cloud/docker.md","ref":"cloud/docker.md","articles":[]},{"title":"Kubernetes","level":"1.7.2","depth":2,"path":"cloud/k8s.md","ref":"cloud/k8s.md","articles":[]}]},"previous":{"title":"Spark","level":"1.6.3","depth":2,"path":"bigdata/spark.md","ref":"bigdata/spark.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"bigdata/zookeeper.md","mtime":"2018-11-03T13:28:03.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-05-21T03:24:19.267Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"内存管理","level":"1.5.4","depth":2,"next":{"title":"sync包","level":"1.5.5","depth":2,"path":"go/sync.md","ref":"go/sync.md","articles":[]},"previous":{"title":"调度器","level":"1.5.3","depth":2,"path":"go/scheduler.md","ref":"go/scheduler.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"go/memory.md","mtime":"2019-05-21T03:21:20.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-05-21T03:24:19.267Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
