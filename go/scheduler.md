@@ -33,6 +33,7 @@
 	```
 - M - machine，操作系统的线程
   - M 必须关联一个 P 来执行 go 代码，不过它可以被阻塞，或者执行系统调用（此时不用关联 P）
+  - M 中的 g0 作用是什么？？？
 - P - processor，处理器（虚拟概念），执行 go 代码需要的资源
   - 由 GOMAXPROCS 环境变量指定
   - 如果可能，最好不要在运行时调用 GOMAXPROCS 函数，会导致 stopTheWorld
