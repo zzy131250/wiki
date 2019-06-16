@@ -8,6 +8,7 @@
     * [设计模式](basis/design-pattern.md)
     * [数据结构与算法](basis/ds-algo.md)
     * [数据库](basis/db.md)
+    * [缓存](basis/cache.md)
     * [Linux工具](basis/linux.md)
 * [Java](java/README.md)
     * [基础](java/basis.md)
@@ -38,3 +39,4 @@
     * [Kubernetes](cloud/k8s.md)
 * [框架](framework/README.md)
     * [Consul](framework/consul.md)
+    * [Kafka](framework/kafka.md)
