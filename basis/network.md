@@ -23,8 +23,13 @@
 - jsonp：利用 script 标签的 src 属性实现，将前端方法作为参数传递到服务器端，然后由服务器端注入参数之后再返回，实现服务器端向客户端通信
 - CORS 跨域资源共享：浏览器发现 AJAX 请求跨源，就会自动添加一些附加的头信息，有时还会多出一次附加的请求，只要服务器实现了 CORS 接口，就可以跨源通信
 
-## TCP/IP 握手过程
+## TCP
+### TCP/IP 握手过程
 ![](http://zia-wiki.oss-cn-hangzhou.aliyuncs.com/18-11-3/22850149.jpg)
+
+### 多进程共享监听 Socket 的方式
+1. 由 master 进程监听端口，并把请求派发给 worker 进程（子进程通过 fd 继承共享，获得 socket）
+2. Linux 3.9 添加了 SO_REUSEPORT 的 socket 选项，支持同一用户的多个进程监听相同的 socket（这些进程都需要开启 SO_REUSEPORT 选项），同时，内核还会自动做负载均衡，见[StackOverflow](https://stackoverflow.com/questions/14388706/how-do-so-reuseaddr-and-so-reuseport-differ)。Nginx 1.9.1 的 Socket Sharding 特性在 Linux 上就是基于内核的 SO_REUSEPORT 实现的
 
 ## Nginx 负载均衡策略
 - 加权轮询
