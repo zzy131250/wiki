@@ -26,7 +26,6 @@
     * [基础](python/basis.md)
 * [Go](go/README.md)
     * [基础](go/basis.md)
-    * [Channel](go/channel.md)
     * [调度器](go/scheduler.md)
     * [内存管理](go/memory.md)
     * [sync包](go/sync.md)
